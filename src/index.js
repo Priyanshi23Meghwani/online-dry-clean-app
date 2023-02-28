@@ -5,9 +5,13 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import ConfigureStore from './store/ConfigureStore';
 import { Provider } from 'react-redux';
+<<<<<<< HEAD
 
 const storeInstance = ConfigureStore();
+=======
+>>>>>>> 6a4ba4289232af620e834e581a5c3218764735de
 
+const storeInstance = ConfigureStore();
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
