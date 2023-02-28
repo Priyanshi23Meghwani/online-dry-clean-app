@@ -25,18 +25,34 @@ export function fetchUser(userId) {
         )
     }
 }
-export function addUser(user){
+export function addUser(user) {
     return (dispatch) => {
         return axios.post("http://localhost:8080/addUser", user)
-        .then(resp => {
-            alert("User added");
-            dispatch({
-                type: "user/add",
-                payload: resp.data
+            .then(resp => {
+                alert("User added");
+                dispatch({
+                    type: "user/add",
+                    payload: resp.data
+                })
+            }
+            ).catch(error => {
+                alert("Registration Failed");
             })
-        }
-        ).catch(error => {
-            alert("Registration Failed");
-        })
     }
+}
+
+export function updateUser(user) {
+    return (dispatch) => {
+        return axios.put("http://localhost:8080/user/" + user.id, user)
+            .then(resp => {
+                alert("User updated");
+                dispatch({
+                    type: "user/update",
+                    payload: resp.data
+                });
+            })
+            .catch(error => {
+                alert("Update Failed");
+            });
+    };
 }

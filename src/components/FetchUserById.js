@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { fetchUser } from '../store/Actions/UserActions';
+import {fetchUser } from '../store/Actions/UserActions';
 function FetchUserById() {
-    const user = useSelector(state => state.userReducer.user);
+    const user = useSelector(state => state.UserReducer.user);
     const dispatch = useDispatch();
     const { userId } = useParams();
     useEffect(() => {
@@ -27,7 +27,6 @@ function FetchUserById() {
                     <p>City : {user.address.city}</p>
                     <p>State : {user.address.state}</p>
                     <p>Pincode : {user.address.pincode}</p>
-                    
                 </div>}
         </div>)
 }

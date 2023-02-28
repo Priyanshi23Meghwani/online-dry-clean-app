@@ -22,8 +22,13 @@ export default function UserReducer(state = initialState, action) {
             newUser: action.payload
         }
     }
+    else if (action.type === 'user/update') {
+        return {
+        ...state,
+        user: action.payload
+        }
+        }
     else {
         return state;
     }
 }
-
