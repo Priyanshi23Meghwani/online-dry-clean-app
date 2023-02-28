@@ -1,25 +1,25 @@
-import logo from './logo.svg';
+
 import './App.css';
+import FetchAllUsers from './components/FetchAllUsers';
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from 'react-router-dom'
+import FetchUserById from './components/FetchUserById';
+import AddUser from './components/AddUser';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <BrowserRouter>
+      <Routes>
+        <Route path="/getAllUsers" element={<FetchAllUsers />} />
+        <Route path="/user/:userId" element={<FetchUserById />} />
+        <Route path="/addUser" element={<AddUser/>} />
+      </Routes>
+    </BrowserRouter>
+  )
 }
 
 export default App;
