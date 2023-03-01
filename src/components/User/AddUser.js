@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addUser } from '../store/Actions/UserActions';
+import { addUser } from '../../store/Actions/UserActions';
 
 function AddUser() {
     const [name, setName] = useState("");

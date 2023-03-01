@@ -10,14 +10,14 @@ export default function OrderReducer(state = initialState, action) {
             ...state, orders: action.payload
         }
     }
-    // else if(action.type==='medicine/fetchbyid'){
+    else if(action.type==='order/fetchById'){
+        return{
+            ...state,order:action.payload
+        }
+    }
+    // else if(action.type==='order/add'){
     //     return{
-    //         ...state,medicine:action.payload
-    //     }
-    // }
-    // else if(action.type==='medicine/add'){
-    //     return{
-    //         ...state,medicine:action.payload
+    //         ...state,order:action.payload
     //     }
     // }
     else

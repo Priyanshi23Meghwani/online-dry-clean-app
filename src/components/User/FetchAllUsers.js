@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
-import { fetchAllUsers } from "../store/Actions/UserActions";
+import { fetchAllUsers } from "../../store/Actions/UserActions";
+
 function FetchAllUsers() {
-    const users = useSelector(state => state.userReducer.users);
+    const users = useSelector(state => state.UserReducer.users);
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -16,8 +17,8 @@ function FetchAllUsers() {
                 users.length > 0 &&
                 users.map(c =>
                     <div>
-                       <p> {c.name}<br></br>{c.email}<br></br>
-                        <Link to={`/user/${c.id}`}>View</Link></p>
+                        <p> {c.name}<br></br>{c.email}<br></br>
+                            <Link to={`/user/${c.id}`}>View</Link></p>
                     </div>
                 )
             }

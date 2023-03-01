@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import {fetchUser } from '../store/Actions/UserActions';
+import {fetchUser } from '../../store/Actions/UserActions';
 function FetchUserById() {
     const user = useSelector(state => state.UserReducer.user);
     const dispatch = useDispatch();
