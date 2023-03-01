@@ -1,7 +1,7 @@
 function CancelOrder(){
     return(
         <div>
-            Order cancellation
+            Update order status to requested to cancel if order status is pending.
         </div>
     )
 }
