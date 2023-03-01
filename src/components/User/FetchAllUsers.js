@@ -16,7 +16,7 @@ function FetchAllUsers() {
             {
                 users.length > 0 &&
                 users.map(c =>
-                    <div>
+                    <div key={c.id}>
                         <p> {c.name}<br></br>{c.email}<br></br>
                             <Link to={`/user/${c.id}`}>View</Link></p>
                     </div>
