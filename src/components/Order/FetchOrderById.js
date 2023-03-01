@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useParams,Link } from 'react-router-dom';
 import { fetchOrderById } from '../../store/Actions/OrderAction';
 
 function FetchOrderById(){
@@ -36,6 +36,7 @@ function FetchOrderById(){
                     <p>Quantity: {order.orderLineItem.quantity}</p>
                     <p>Material: {order.orderLineItem.material}</p> 
                     <p>Instructions: {order.orderLineItem.instructions}</p> 
+                    <p><Link to={`/orders/cancel`}>Cancel Order</Link></p>
                 </div>}
         </div>
     )

@@ -13,6 +13,7 @@ export function fetchAllUsers() {
         )
     }
 }
+
 export function fetchUser(userId) {
     return (dispatch) => {
         return axios.get("http://localhost:8080/user/" + userId).then(
@@ -41,18 +42,35 @@ export function addUser(user) {
     }
 }
 
+// export function updateUser(user) {
+//     return (dispatch) => {
+//         return axios.put("http://localhost:8080/user/" + user.id, user)
+//             .then(resp => {
+//                 alert("User updated");
+//                 dispatch({
+//                     type: "user/update",
+//                     payload: resp.data
+//                 });
+//             })
+//             .catch(error => {
+//                 alert("Update Failed");
+//             });
+//     };
+// }
+
 export function updateUser(user) {
-    return (dispatch) => {
-        return axios.put("http://localhost:8080/user/" + user.id, user)
-            .then(resp => {
-                alert("User updated");
-                dispatch({
-                    type: "user/update",
-                    payload: resp.data
-                });
-            })
-            .catch(error => {
-                alert("Update Failed");
+
+    return async (dispatch) => {
+        try {
+            const resp = await axios.put("http://localhost:8080/user/" + user.id, user);
+            dispatch({
+                type: "user/update",
+                payload: resp.data
             });
+            alert("User updated");
+        }catch(err){
+            alert(err);
+        }
     };
+    
 }

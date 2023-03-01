@@ -15,20 +15,20 @@ function App() {
     <div >
       <BrowserRouter>
         <Routes>
-          
-          <Route path="/getAllUsers" element={<FetchAllUsers />} />
-          <Route path="/user/:userId" element={<FetchUserById />} />
-          <Route path="/addUser" element={<AddUser />} />
+
+          <Route path="/users" element={<FetchAllUsers/>} />
+          <Route path="/users/:userId" element={<FetchUserById/>} />
+          <Route path="/addUser" element={<AddUser/>} />
           <Route path="/user/update/:userId" element={<UpdateUser/>} />
 
-          <Route path='/orders/all' element={<FetchAllOrders />} />
-          <Route path='/orders/details/:orderId' element={<FetchOrderById />} />
-          <Route path='/orders/cancel/:orderId' element={<CancelOrder />} />
+          <Route path='/orders/all' element={<FetchAllOrders/>} />
+          <Route path='/orders/details/:orderId' element={<FetchOrderById/>} />
+          <Route path='/orders/cancel' element={<CancelOrder/>} />
+        
           <Route path='/services/getall' element={<GetAllServices />} />
 
           <Route path='/updateAddress/:addressId' element={<UpdateAddress/>}/>
           
-
         </Routes>
       </BrowserRouter>
     </div>
