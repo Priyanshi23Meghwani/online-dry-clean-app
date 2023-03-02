@@ -24,3 +24,19 @@ export function fetchOrderById(orderId) {
         )
     }
 }
+
+export function addOrder(order) {
+    return (dispatch) => {
+        return axios.post("http://localhost:8080/addOrder", order)
+            .then(resp => {
+                alert("Order added");
+                dispatch({
+                    type: "order/add",
+                    payload: resp.data
+                })
+            }
+            ).catch(error => {
+                alert("Order not placed.");
+            })
+    }
+}
