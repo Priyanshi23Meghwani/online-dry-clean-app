@@ -55,3 +55,21 @@ export function cancelOrder(orderId){
         )
     }
 }
+
+
+export function updateOrderStatus(order) {
+
+    return async (dispatch) => {
+        try {
+            const resp = await axios.put("http://localhost:8080/orders/changeStatus/" + order.id, order);
+            dispatch({
+                type: "status/update",
+                payload: resp.data
+            });
+            alert("Status updated");
+        } catch (err) {
+            alert(err);
+        }
+    };
+
+}
