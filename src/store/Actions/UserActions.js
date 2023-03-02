@@ -27,18 +27,17 @@ export function fetchUser(userId) {
     }
 }
 export function addUser(user) {
-    return (dispatch) => {
-        return axios.post("http://localhost:8080/addUser", user)
-            .then(resp => {
-                alert("User added");
-                dispatch({
-                    type: "user/add",
-                    payload: resp.data
-                })
-            }
-            ).catch(error => {
-                alert("Registration Failed");
-            })
+    return async (dispatch) => {
+        try {
+            const resp = axios.post("http://localhost:8080/addUser", user);
+            dispatch({
+                type: "user/add",
+                payload: resp.data
+            });
+            alert("User added");
+        } catch (err) {
+            alert("Registration Failed" + err);
+        }
     }
 }
 
@@ -68,9 +67,9 @@ export function updateUser(user) {
                 payload: resp.data
             });
             alert("User updated");
-        }catch(err){
+        } catch (err) {
             alert(err);
         }
     };
-    
+
 }

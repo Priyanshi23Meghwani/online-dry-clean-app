@@ -4,13 +4,15 @@ import { addOrder } from "../../store/Actions/OrderAction";
 
 function AddOrder() {
 
-    const [orderDate, setOrderDate] = useState("");
+
+    const [orderDate, setOrderDate] = useState("2023-12-24");
     const [deliveryDate, setDeliveryDate] = useState("");
-    const [service, setService] = useState("");
+    const [service, setService] = useState("1");
     const [itemType, setItemType] = useState("");
     const [quantity, setQuantity] = useState("");
     const [material, setMaterial] = useState("");
     const [instructions, setInstructions] = useState("");
+    console.log(orderDate);
 
     const dispatch = useDispatch();
 
@@ -39,13 +41,14 @@ function AddOrder() {
 
     const validateForm = () => {
         return (
-          service !== "" &&
-          itemType !== "" &&
-          orderDate !== "" &&
-          deliveryDate !== "" &&
-          quantity !== "" &&
-          material !== "" &&
-          instructions !== ""
+          service &&
+          itemType &&
+          orderDate &&
+          deliveryDate &&
+          quantity&&
+          Number(quantity) > 0 &&
+          material &&
+          instructions
         );
       };
 
@@ -59,7 +62,7 @@ function AddOrder() {
             </div>
             <div>
                 <label>Delivery Date</label>
-                <input type="date" name="DeliveryDate" value={deliveryDate}
+                <input type="date"  min="2023-03-08" name="DeliveryDate"  value={deliveryDate}
                     onChange={event => setDeliveryDate(event.target.value)} />
             </div>
             <div>
@@ -77,7 +80,7 @@ function AddOrder() {
             </div>
             <div>
                 <label>Quantity</label>
-                <input type="number" name="Quantity" value={quantity}
+                <input type="number" min={1} name="Quantity" value={quantity}
                     onChange={event => setQuantity(event.target.value)} />
             </div>
             <div>

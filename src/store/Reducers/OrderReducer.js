@@ -1,7 +1,8 @@
 const initialState = {
     orders: [],
     order: null,
-    newOrder:null
+    newOrder:null,
+    orderCancel:null
 }
 
 export default function OrderReducer(state = initialState, action) {
@@ -22,6 +23,12 @@ export default function OrderReducer(state = initialState, action) {
         return {
             ...state,
             newOrder: action.payload
+        }
+    }
+    else if(action.type === 'order/cancelorder'){
+        return {
+            ...state,
+            orderCancel:action.payload
         }
     }
     // else if(action.type==='order/add'){

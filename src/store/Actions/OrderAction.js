@@ -40,3 +40,18 @@ export function addOrder(order) {
             })
     }
 }
+
+export function cancelOrder(orderId){
+
+    return(dispatch) => {
+        return axios.put("http://localhost:8080/orders/cancelOrder/" + orderId).then(
+            resp => {
+                alert("Order is Cancelled");
+                dispatch({
+                    type: 'order/cancelorder',
+                    payload: resp.data
+                });
+            }
+        )
+    }
+}
