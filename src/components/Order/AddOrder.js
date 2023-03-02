@@ -14,7 +14,6 @@ function AddOrder() {
 
     const dispatch = useDispatch();
 
-
     const placeOrder = () => {
         const payload = {
             orderDate: orderDate,
@@ -37,6 +36,18 @@ function AddOrder() {
         console.log(payload);
         dispatch(addOrder(payload))
     }
+
+    const validateForm = () => {
+        return (
+          service !== "" &&
+          itemType !== "" &&
+          orderDate !== "" &&
+          deliveryDate !== "" &&
+          quantity !== "" &&
+          material !== "" &&
+          instructions !== ""
+        );
+      };
 
     return (
         <div className="container">
@@ -79,7 +90,7 @@ function AddOrder() {
                 <input type="text" name="Instructions" value={instructions}
                     onChange={event => setInstructions(event.target.value)} />
             </div>
-            <button onClick={placeOrder}>Place Order</button>
+            <button onClick={placeOrder}  disabled={!validateForm()}>Place Order</button>
 
         </div>
     )

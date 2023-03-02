@@ -15,7 +15,7 @@ function UpdateOrderLineItem() {
     const { itemId } = useParams();
     const dispatch = useDispatch();
     const order = useSelector(state => state.OrderReducer.order);
-
+    
     useEffect(() => {
         dispatch(fetchOrderById(itemId));
     }, [dispatch, itemId]);
@@ -41,6 +41,16 @@ function UpdateOrderLineItem() {
         dispatch(updateOrderLineItem(payload));
     }
 
+    const validateForm = () => {
+        return (
+          id !== "" &&
+          type !== "" &&
+          quantity !== "" &&
+          material !== "" &&
+          instructions !== ""
+        );
+      };
+
     return (
         <div>
             <h1> Update OrderLine Item if Order Status is pending</h1>
@@ -64,7 +74,7 @@ function UpdateOrderLineItem() {
                 <input type="text" name="Instructions" value={instructions}
                     onChange={event => setInstructions(event.target.value)} />
             </div>
-            <button onClick={update}>Update</button>
+            <button onClick={update} disabled={!validateForm()}>Update</button>
         </div>
     )
 }
