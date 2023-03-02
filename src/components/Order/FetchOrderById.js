@@ -37,6 +37,7 @@ function FetchOrderById(){
                     <p>Material: {order.orderLineItem.material}</p> 
                     <p>Instructions: {order.orderLineItem.instructions}</p> 
                     <p><Link to={`/orders/cancel`}>Cancel Order</Link></p>
+                    <p><Link to={`/order/details/update/${order.id}`}>Update Order details</Link></p>
                 </div>}
         </div>
     )

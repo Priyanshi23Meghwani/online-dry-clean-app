@@ -6,8 +6,6 @@ function AddOrder() {
 
     const [orderDate, setOrderDate] = useState("");
     const [deliveryDate, setDeliveryDate] = useState("");
-    const [paymentStatus, setPaymentStatus] = useState("");
-    const [orderStatus, setOrderStatus] = useState("");
     const [service, setService] = useState("");
     const [itemType, setItemType] = useState("");
     const [quantity, setQuantity] = useState("");
@@ -21,8 +19,8 @@ function AddOrder() {
         const payload = {
             orderDate: orderDate,
             deliveryDate: deliveryDate,
-            paymentStatus: paymentStatus,
-            orderStatus: orderStatus,
+            paymentStatus: "Pending",
+            orderStatus: "Pending",
             users: {
                 id: "7"
             },
@@ -49,19 +47,9 @@ function AddOrder() {
                     onChange={event => setOrderDate(event.target.value)} />
             </div>
             <div>
-                <label>Estimated Delivery Date</label>
+                <label>Delivery Date</label>
                 <input type="date" name="DeliveryDate" value={deliveryDate}
                     onChange={event => setDeliveryDate(event.target.value)} />
-            </div>
-            <div>
-                <label>Payment Status</label>
-                <input type="text" name="PaymentStatus" value={paymentStatus}
-                    onChange={event => setPaymentStatus(event.target.value)} />
-            </div>
-            <div>
-                <label>Order Status</label>
-                <input type="text" name="OrderStatus" value={orderStatus}
-                    onChange={event => setOrderStatus(event.target.value)} />
             </div>
             <div>
                 <label>Service</label>

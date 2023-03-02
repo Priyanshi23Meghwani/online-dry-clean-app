@@ -11,6 +11,7 @@ import GetAllServices from './components/Service/getAllServices';
 import AddOrder from './components/Order/AddOrder';
 import UpdateAddress from './components/Address/UpdateAddress';
 import Login from './components/Login';
+import UpdateOrderLineItem from './components/OrderLineItem/UpdateOrderLineItem';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path='/orders/details/:orderId' element={<FetchOrderById/>} />
           <Route path='/orders/cancel' element={<CancelOrder/>} />
           <Route path='/orders/add' element={<AddOrder/>} />
+          <Route path='/order/details/update/:itemId' element={<UpdateOrderLineItem/>} />
         
           <Route path='/services/getall' element={<GetAllServices />} />
 
