@@ -9,13 +9,15 @@ import CancelOrder from './components/Order/CancelOrder';
 import UpdateUser from './components/User/UpdateUser';
 import GetAllServices from './components/Service/getAllServices';
 import AddOrder from './components/Order/AddOrder';
+import UpdateAddress from './components/Address/UpdateAddress';
+import Login from './components/Login';
 
 function App() {
   return (
     <div >
       <BrowserRouter>
         <Routes>
-
+          <Route path="/login" element={<Login/>}/>
           <Route path="/users" element={<FetchAllUsers/>} />
           <Route path="/users/:userId" element={<FetchUserById/>} />
           <Route path="/addUser" element={<AddUser/>} />
@@ -27,6 +29,8 @@ function App() {
           <Route path='/orders/add' element={<AddOrder/>} />
         
           <Route path='/services/getall' element={<GetAllServices />} />
+
+          <Route path='/updateAddress/:addressId' element={<UpdateAddress/>}/>
           
         </Routes>
       </BrowserRouter>
