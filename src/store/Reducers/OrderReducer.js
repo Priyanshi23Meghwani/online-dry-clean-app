@@ -1,22 +1,22 @@
 const initialState = {
     orders: [],
     order: null,
-    newOrder:null,
-    orderCancel:null
+    newOrder: null,
+    orderCancel: null
 }
 
 export default function OrderReducer(state = initialState, action) {
 
-    if (action.type === 'orders/fetchAll') { 
+    if (action.type === 'orders/fetchAll') {
         return {
-            ...state, 
+            ...state,
             orders: action.payload
         }
     }
-    else if(action.type==='order/fetchById'){
-        return{
+    else if (action.type === 'order/fetchById') {
+        return {
             ...state,
-            order:action.payload
+            order: action.payload
         }
     }
     else if (action.type === 'order/add') {
@@ -25,10 +25,16 @@ export default function OrderReducer(state = initialState, action) {
             newOrder: action.payload
         }
     }
-    else if(action.type === 'order/cancelorder'){
+    else if (action.type === 'order/fetchbyuserid') {
         return {
             ...state,
-            orderCancel:action.payload
+            orders: action.payload
+        }
+    }
+    else if (action.type === 'order/cancelorder') {
+        return {
+            ...state,
+            orderCancel: action.payload
         }
     }
     // else if(action.type==='order/add'){
