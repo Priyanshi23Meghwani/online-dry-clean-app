@@ -56,7 +56,6 @@ export function cancelOrder(orderId){
     }
 }
 
-
 export function updateOrderStatus(order) {
 
     return async (dispatch) => {

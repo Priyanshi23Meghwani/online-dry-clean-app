@@ -37,6 +37,7 @@ export default function OrderReducer(state = initialState, action) {
     //         ...state,order:action.payload
     //     }
     // }
+    
     else if (action.type === 'status/update') {
         return {
         ...state,
