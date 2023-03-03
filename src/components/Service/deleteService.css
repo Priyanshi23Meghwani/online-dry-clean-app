@@ -1,0 +1,63 @@
+.delete-service-form {
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 0.25rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .delete-service-form label {
+    font-weight: bold;
+  }
+  
+  .delete-service-form input[type="text"] {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border-radius: 0.25rem;
+    border: 1px solid #ced4da;
+    transition: border-color 0.2s ease-in-out;
+  }
+  
+  .delete-service-form button {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: #fff;
+    margin-top: 1rem;
+  }
+  
+  .delete-service-form button:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+    color: #fff;
+  }
+  
+  .delete-service-form input[type="text"]:focus {
+    outline: none;
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+  
+  .delete-service-form input[type="text"]:hover {
+    border-color: #80bdff;
+  }
+  
+  .delete-service-form input[type="text"]::placeholder {
+    color: #6c757d;
+    opacity: 1;
+  }
+  
+  .delete-service-form input[type="text"]:-ms-input-placeholder {
+    color: #6c757d;
+  }
+  
+  .delete-service-form input[type="text"]::-ms-input-placeholder {
+    color: #6c757d;
+  }
+  
+  .container {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 0.25rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  

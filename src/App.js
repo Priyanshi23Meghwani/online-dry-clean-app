@@ -13,6 +13,10 @@ import UpdateAddress from './components/Address/UpdateAddress';
 import Login from './components/Login';
 import UpdateOrderLineItem from './components/OrderLineItem/UpdateOrderLineItem';
 import ChangeOrderStatus from './components/Order/ChangeOrderStatus';
+import AddService from './components/Service/addService';
+import DeleteService from './components/Service/deleteService';
+import Footer from './components/Home/Footer';
+
 
 function App() {
   return (
@@ -35,6 +39,10 @@ function App() {
           <Route path='/services/getall' element={<GetAllServices />} />
 
           <Route path='/updateAddress/:addressId' element={<UpdateAddress/>}/>
+
+          <Route path='/service/add' element={<AddService />} />
+          <Route path='/service/delete' element={<DeleteService />} />
+          <Route path='/footer' element={<Footer />} />
           
         </Routes>
       </BrowserRouter>
