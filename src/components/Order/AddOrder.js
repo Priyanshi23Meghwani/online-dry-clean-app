@@ -12,6 +12,14 @@ function AddOrder() {
     const [quantity, setQuantity] = useState("");
     const [material, setMaterial] = useState("");
     const [instructions, setInstructions] = useState("");
+
+    // const date = new Date();
+
+    // const year = date.getFullYear();
+    // const month = (date.getMonth() + 1).toString().padStart(2, "0"); // Month is zero-indexed
+    // const day = date.getDate().toString().padStart(2, "0");
+
+    // const outputDateString = `${year}-${month}-${day}`;
     console.log(orderDate);
 
     const dispatch = useDispatch();
@@ -41,16 +49,16 @@ function AddOrder() {
 
     const validateForm = () => {
         return (
-          service &&
-          itemType &&
-          orderDate &&
-          deliveryDate &&
-          quantity&&
-          Number(quantity) > 0 &&
-          material &&
-          instructions
+            service &&
+            itemType &&
+            orderDate &&
+            deliveryDate &&
+            quantity &&
+            Number(quantity) > 0 &&
+            material &&
+            instructions
         );
-      };
+    };
 
     return (
         <div className="container">
@@ -62,7 +70,7 @@ function AddOrder() {
             </div>
             <div>
                 <label>Delivery Date</label>
-                <input type="date"  min="2023-03-08" name="DeliveryDate"  value={deliveryDate}
+                <input type="date" min="2023-03-08" name="DeliveryDate" value={deliveryDate}
                     onChange={event => setDeliveryDate(event.target.value)} />
             </div>
             <div>
@@ -93,7 +101,7 @@ function AddOrder() {
                 <input type="text" name="Instructions" value={instructions}
                     onChange={event => setInstructions(event.target.value)} />
             </div>
-            <button onClick={placeOrder}  disabled={!validateForm()}>Place Order</button>
+            <button onClick={placeOrder} disabled={!validateForm()}>Place Order</button>
 
         </div>
     )

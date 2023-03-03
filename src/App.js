@@ -12,12 +12,14 @@ import AddOrder from './components/Order/AddOrder';
 import UpdateAddress from './components/Address/UpdateAddress';
 import Login from './components/Login';
 import UpdateOrderLineItem from './components/OrderLineItem/UpdateOrderLineItem';
+import HomePage from './components/Dashboards/HomePage';
 
 function App() {
   return (
     <div >
       <BrowserRouter>
         <Routes>
+          <Route path="/" element={<HomePage/>}/>
           <Route path="/login" element={<Login/>}/>
           <Route path="/users" element={<FetchAllUsers/>} />
           <Route path="/users/:userId" element={<FetchUserById/>} />

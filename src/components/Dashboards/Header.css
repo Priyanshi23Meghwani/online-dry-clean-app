@@ -1,0 +1,108 @@
+
+.header {
+    display: flex;
+    position: fixed;
+    top:0;
+    right:0;
+    left:0;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 0 3vw;
+    border-bottom: 1px solid lightgray;
+    /* bottom shadow */
+    -webkit-box-shadow: 0 4px 6px -6px #222;
+    -moz-box-shadow: 0 4px 6px -6px #222;
+    box-shadow: 0 4px 6px -6px #222;
+}
+
+.header-logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.header-logo-img{
+    height: 100px;
+    width: 200px;
+}
+
+.header-buttons {
+    display: flex;
+}
+
+.header-buttons-btn{
+    margin: 0 10px;
+    font-size: 15px;
+    font-family: Arial;
+    width: 140px;
+    height: 50px;
+    border-width: 0px;
+    color: #ffffff;
+    border-radius: 3px;
+    box-shadow: 0px 6px 16px 0px rgba(208, 209, 214, 1);
+    background: linear-gradient(rgba(69, 200, 236, 1), #18aaf0);
+}
+
+.header-buttons-btn:hover {
+    background: #18aaf0;
+}
+
+.header-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-nav-ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.header-nav-ul-li{
+    margin: 0 20px;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+a:hover {
+    text-decoration: underline;
+    text-underline-offset: 15px; /* move the underline slightly below the text */
+    text-decoration-color: rgb(0, 0, 0); /* set the underline color to blue */
+   
+    text-decoration-thickness: 2px; /* make the underline thicker */
+  }
+
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header-buttons {
+        margin-top: 10px;
+    }
+
+    .header-nav{
+        /* flex-direction: column; */
+        width: 100%;
+    }
+
+    .header-nav-ul{
+        /* flex-direction: column; */
+        width: 100%;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .header-nav-ul-li{
+        margin: 10px 0;
+    }
+}

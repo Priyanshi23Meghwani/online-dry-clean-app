@@ -11,6 +11,7 @@ function FetchAllUsers() {
         dispatch(fetchAllUsers());
     }, [])
 
+
     return (
         <div >
             {
@@ -18,7 +19,7 @@ function FetchAllUsers() {
                 users.map(c =>
                     <div key={c.id}>
                         <p> {c.name}<br></br>{c.email}<br></br>
-                            <Link to={`/user/${c.id}`}>View</Link></p>
+                            <Link to={`/users/${c.id}`}>View</Link></p>
                     </div>
                 )
             }

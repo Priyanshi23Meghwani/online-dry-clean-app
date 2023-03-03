@@ -35,8 +35,8 @@ export function addUser(user) {
                 payload: resp.data
             });
             alert("User added");
-        } catch (err) {
-            alert("Registration Failed" + err);
+        } catch(err){
+            alert("Registration Failed"+err);
         }
     }
 }

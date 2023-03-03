@@ -31,11 +31,6 @@ export default function OrderReducer(state = initialState, action) {
             orderCancel:action.payload
         }
     }
-    // else if(action.type==='order/add'){
-    //     return{
-    //         ...state,order:action.payload
-    //     }
-    // }
     else
         return state;
 
