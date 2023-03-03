@@ -24,6 +24,7 @@ function FetchAllOrders() {
                         <th>Amount</th>
                         <th>Status</th>
                         <th></th>
+                        <th></th>
                     </tr>
                 </thead>
                 {
@@ -36,6 +37,7 @@ function FetchAllOrders() {
                                 <td>{order.orderStatus}</td>
                                 {/* <td>View</td> */}
                                 <td><Link to={`/orders/details/${order.id}`}>View</Link></td>
+                                <td><Link to={`/order/status/${order.id}`}>Change Status</Link></td>
                             </tr>
                         </tbody>
 

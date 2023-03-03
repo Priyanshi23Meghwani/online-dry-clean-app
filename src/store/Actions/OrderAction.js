@@ -25,6 +25,19 @@ export function fetchOrderById(orderId) {
     }
 }
 
+export function fetchOrderByUserId(userid) {
+    return (dispatch) => {
+        return axios.get('http://localhost:8080/user/orders/' + userid)
+            .then(resp => {
+                dispatch({
+                    type: 'order/fetchbyuserid',
+                    payload: resp.data
+                });
+            })
+    }
+
+}
+
 export function addOrder(order) {
     return (dispatch) => {
         return axios.post("http://localhost:8080/addOrder", order)
@@ -54,4 +67,22 @@ export function cancelOrder(orderId){
             }
         )
     }
+}
+
+
+export function updateOrderStatus(order) {
+
+    return async (dispatch) => {
+        try {
+            const resp = await axios.put("http://localhost:8080/orders/changeStatus/" + order.id, order);
+            dispatch({
+                type: "status/update",
+                payload: resp.data
+            });
+            alert("Status updated");
+        } catch (err) {
+            alert(err);
+        }
+    };
+
 }

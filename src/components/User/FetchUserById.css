@@ -1,0 +1,118 @@
+.colorful-bar {
+    background: linear-gradient(to right, rgb(20, 230, 233), rgb(8, 240, 143));
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.profile-pic {
+    width: 130px;
+    height: 130px;
+    border-radius: 0;
+    border: 5px solid white;
+    object-fit: cover;
+    transform: translateY(360%);
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    transition: box-shadow 0.2s ease-in-out;
+    margin-left: 150px;
+    position: absolute;
+}
+
+.profile-pic:hover {
+    box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.7);
+    border-color: cyan;
+}
+
+.text {
+    margin-top: 530px;
+    margin-left: 50px;
+}
+
+.text-1 {
+    margin-top: 25px;
+    margin-left: 150px;
+
+}
+
+.btn-1 {
+    margin-top: 35px;
+    margin-left: 150px;
+    padding: 10px 15px;
+    background: linear-gradient(to right, rgb(20, 230, 233), rgb(8, 240, 143));
+    color: white;
+    border: none;
+}
+
+.text-2 {
+    margin-top: 15px;
+    margin-left: 150px;
+}
+
+.address {
+    margin: 20px 0px;
+}
+
+.btn-2 {
+    margin-top: 170px;
+    margin-left: 150px;
+    padding: 10px 15px;
+    background: linear-gradient(to right, rgb(20, 230, 233), rgb(8, 240, 143));
+    color: white;
+    border: none;
+}
+
+.btn-1:hover,
+.btn-2:hover {
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    color: black;
+}
+
+p {
+    margin-bottom: 3px;
+}
+
+.btn-small {
+    font-size: 0.8rem;
+}
+
+
+/* @media screen and (max-width: 567px) {
+    .profile-pic {
+      width: 50%;
+      transform: translateY(500%);
+    }
+    .text {
+        margin-top: 1000px;
+        margin-left: 50px;
+    }
+  } */
+@media only screen and (max-width: 426px) {
+    .profile-pic {
+        width: 100px;
+        height: 100px;
+        margin-left: 30%;
+        transform: translateY(610%);
+    }
+
+    .text {
+        margin-top: 720px;
+        margin-left: 35%;
+
+    }
+
+    .text-1,
+    .text-2 {
+        margin-top: 00px;
+        margin-left: 35%;
+        text-align: left;
+    }
+
+    .btn-1,
+    .btn-2 {
+        margin-top: 10px;
+        display: block;
+        margin: 0 auto;
+    }
+}

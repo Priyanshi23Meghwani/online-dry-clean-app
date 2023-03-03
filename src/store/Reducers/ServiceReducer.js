@@ -1,5 +1,5 @@
 const initialState = {
-    services : []
+    services : [],
 }
 
 export default function serviceReducer(state=initialState, action) {
@@ -11,6 +11,21 @@ export default function serviceReducer(state=initialState, action) {
         }
     }
 
+    else if (action.type === 'service/add') {
+        return {
+            ...state,
+            services : action.payload
+        }
+    }
+
+    else if (action.type === 'service/delete') {
+        return {
+            ...state,
+            services: state.services.filter(
+              (service) => service.id !== action.payload
+            ),
+    }
+}
     else {
         return state;
     }

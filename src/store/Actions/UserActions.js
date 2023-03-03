@@ -2,29 +2,56 @@ import axios from 'axios';
 
 export function fetchAllUsers() {
 
-    return (dispatch) => {
-        return axios.get("http://localhost:8080/getAllUsers").then(
-            resp => {
-                dispatch({
-                    type: "user/fetchall",
-                    payload: resp.data
-                });
-            }
-        )
+    return async (dispatch) => {
+        try {
+            const resp = await axios.get("http://localhost:8080/getAllUsers")
+            dispatch({
+                type: "user/fetchall",
+                payload: resp.data
+            });
+        }
+        catch (err){
+            alert(err)
+        }
     }
 }
 
+//     return (dispatch) => {
+//         return axios.get("http://localhost:8080/getAllUsers").then(
+//             resp => {
+//                 dispatch({
+//                     type: "user/fetchall",
+//                     payload: resp.data
+//                 });
+//             }
+//         )
+//     }
+// }
+
+// export function fetchUser(userId) {
+//     return (dispatch) => {
+//         return axios.get("http://localhost:8080/user/" + userId).then(
+//             resp => {
+//                 dispatch({
+//                     type: "user/fetch",
+//                     payload: resp.data
+//                 });
+//             }
+//         )
+//     }
+// }
 export function fetchUser(userId) {
-    return (dispatch) => {
-        return axios.get("http://localhost:8080/user/" + userId).then(
-            resp => {
-                dispatch({
-                    type: "user/fetch",
-                    payload: resp.data
-                });
-            }
-        )
-    }
+    return async (dispatch) => {
+        try {
+            const resp = await axios.get(`http://localhost:8080/user/${userId}`);
+            dispatch({
+                type: "user/fetch",
+                payload: resp.data,
+            });
+        } catch (error) {
+            // Handle error
+        }
+    };
 }
 export function addUser(user) {
     return async (dispatch) => {
