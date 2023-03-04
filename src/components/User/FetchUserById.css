@@ -1,3 +1,150 @@
+/* .custom-container {
+    margin-right: auto;
+    margin-top: -270px;
+    margin-left: 150px;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+ .colorful-bar {
+    background: linear-gradient(to right, rgb(20, 230, 233), rgb(8, 240, 143));
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 0;
+    border: 5px solid white;
+    object-fit: cover;
+    transform: translateY(510%);
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    transition: box-shadow 0.2s ease-in-out;
+    margin-left: 100px;
+    position: absolute;
+}
+
+.profile-pic:hover {
+    box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.7);
+    border-color: cyan;
+}
+
+.text {
+    margin-top: 850px;
+    margin-left: 80px;
+}
+
+.text-1 {
+    margin-top: 30px;
+    margin-left: 100px;
+
+}
+
+.text-2 {
+    margin-top: 15px;
+    margin-left: 100px;
+}
+
+.address {
+    margin: 20px 0px;
+}
+.btn-1 {
+    margin-top: 35px;
+    margin-left: 300px;
+    padding: 10px 15px;
+    background: linear-gradient(to right, rgb(20, 230, 233), rgb(8, 240, 143));
+    color: white;
+    border: none;
+}
+.btn-2 {
+    margin-top: 170px;
+    margin-left:300px;
+    padding: 10px 15px;
+    background: linear-gradient(to right, rgb(20, 230, 233), rgb(8, 240, 143));
+    color: white;
+    border: none;
+}
+
+.btn-1:hover,
+.btn-2:hover {
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    color: black;
+}
+
+p {
+    margin-bottom: 3px;
+}
+
+.btn-small {
+    font-size: 0.8rem;
+}
+
+@media only screen and (max-width: 426px) {
+   
+    .profile-pic {
+        width: 100px;
+        height: 100px;
+        margin-left: -70px;
+        transform: translateY(950%);
+    }
+
+    .text {
+        margin-top: 980px;
+        margin-left: 35%;
+
+    }
+
+    .text-1,
+    .text-2 {
+        margin-top: 00px;
+        margin-left: -70px;
+        text-align: left;
+    }
+
+    .btn-1,
+    .btn-2 {
+        margin-top: 10px;
+        display: block;
+        margin: 0 auto;
+    }
+}  */
+
+.custom-container {
+    max-width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  @media (min-width: 576px) {
+    .custom-container {
+      max-width: 540px;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .custom-container {
+      max-width: 720px;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .custom-container {
+      max-width: 960px;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .custom-container {
+      max-width: 1140px;
+    }
+  }
 .colorful-bar {
     background: linear-gradient(to right, rgb(20, 230, 233), rgb(8, 240, 143));
     height: 100px;
@@ -76,18 +223,6 @@ p {
 .btn-small {
     font-size: 0.8rem;
 }
-
-
-/* @media screen and (max-width: 567px) {
-    .profile-pic {
-      width: 50%;
-      transform: translateY(500%);
-    }
-    .text {
-        margin-top: 1000px;
-        margin-left: 50px;
-    }
-  } */
 @media only screen and (max-width: 426px) {
     .profile-pic {
         width: 100px;
@@ -116,3 +251,39 @@ p {
         margin: 0 auto;
     }
 }
+
+@media (min-width: 426px) and (max-width: 769px) {
+    .profile-pic {
+        width: 100px;
+        height: 100px;
+        margin-left: 30%;
+        transform: translateY(480%);
+    }
+
+    .text {
+        margin-top: 510px;
+        margin-left: 50px;
+
+    }
+
+    .text-1,
+    .text-2 {
+        margin-top: 00px;
+        margin-left: 35%;
+        text-align: left;
+    }
+
+    .btn-1
+     {
+        margin-top: 10px;
+        display: block;
+        margin: 0 auto;
+    }
+    .btn-2
+     {
+        margin-top: 200px;
+        display: block;
+        margin-left: 100px;
+       
+    }
+  }

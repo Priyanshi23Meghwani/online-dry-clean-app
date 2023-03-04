@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useDispatch,useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { fetchOrderById } from "../../store/Actions/OrderAction";
 import { updateOrderStatus } from "../../store/Actions/OrderAction";
@@ -13,7 +13,7 @@ const allStatus = [
     "Dispatched",
     "Delivered"
 ]
-function ChangeOrderStatus(){
+function ChangeOrderStatus() {
 
     const [id, setId] = useState("");
     const [orderStatus, setOrderStatus] = useState("");
@@ -42,25 +42,30 @@ function ChangeOrderStatus(){
 
     }
 
-    return(
-        <div>
-             <div>
+    return (
+        <div className="container">
+            <div className="form-group">
                 <label>Order Id</label>
-                <input type="number" name="userId" value={id}
-                    onChange={event => setId(event.target.value)} disabled />
+                <input type="number" name="orderId" id="orderId" className="form-control" value={id}
+                    onChange={(event) => setId(event.target.value)} disabled />
             </div>
-            <div>
-                    <label>Order Status</label>
-                    <select value={orderStatus} onChange={(event) => setOrderStatus(event.target.value)}>
-                        <option value="">---Select---</option>
-                        {allStatus.map((orderStatus) => (
-                            <option key={orderStatus} value={orderStatus}>{orderStatus}</option>
-                        ))}
-                    </select>
-                </div>
-                <button onClick={update}>Update</button>
-
+            <div className="form-group">
+                <label >Order Status</label>
+                <select id="orderStatus" className="form-control" value={orderStatus}
+                    onChange={(event) => setOrderStatus(event.target.value)} >
+                    <option value="">---Select---</option>
+                    {allStatus.map((status) => (
+                        <option key={status} value={status}>
+                            {status}
+                        </option>
+                    ))}
+                </select>
+            </div>
+            <button className="btn btn-primary" onClick={update}>
+                Update
+            </button>
         </div>
-    )
+    );
+
 }
 export default ChangeOrderStatus
