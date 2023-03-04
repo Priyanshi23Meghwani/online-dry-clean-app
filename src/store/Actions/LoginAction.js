@@ -6,7 +6,7 @@ export const loginUser = (payload, navigate) => async (dispatch) => {
       const loggedInUser = resp.data;
 
       const myObj = {
-        userId: loggedInUser.userId,
+        userId: loggedInUser.id,
         name: loggedInUser.name,
         role: loggedInUser.role,
       };

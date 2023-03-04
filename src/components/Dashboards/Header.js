@@ -16,8 +16,10 @@ function Header() {
                     <li className="header-nav-ul-li"> <a href="#">HOME</a> </li>
                     <li className="header-nav-ul-li"> <a href="#">ABOUT</a> </li>
                     <li className="header-nav-ul-li"> <a href="#">SERVICES</a> </li>
+
                     {items && items.role == "customer" ?
-                        <li className="header-nav-ul-li"> <a href="/user/:userId">MY PROFILE</a> </li>: ""}
+                        <li className="header-nav-ul-li"> <a href={`/user/${items.userId}`}>MY PROFILE</a> </li>: ""}
+
                     {items && items.role == "customer" ?
                         <li className="header-nav-ul-li"> <a href="#">MY ORDERS</a> </li>: ""}
                 </ul>
@@ -30,7 +32,7 @@ function Header() {
 
             {items && items.role == "admin" ?
                 <div className="header-buttons">
-                    <button className="header-buttons-btn" onClick={() => navigate("admin/orders")}>ORDERS</button>
+                    <button className="header-buttons-btn" onClick={() => navigate("/admin/orders")}>ORDERS</button>
                     <button className="header-buttons-btn" onClick={() => navigate("/addUser")}>LOGOUT</button>
                 </div> : ""}
 
