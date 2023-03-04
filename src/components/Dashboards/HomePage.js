@@ -12,8 +12,8 @@ function HomePage(){
             <Header/>
             <HeroSection/>
             <AboutUs/>
-            {/* <GetAllServices/>
-            <FetchUserById/> */}
+            <GetAllServices/>
+            {/* <FetchUserById/> */}
             <Footer/>
         </div>
     )
