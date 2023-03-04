@@ -21,14 +21,14 @@ const style = {
     border: '2px solid #000',
     boxShadow: 24,
     p: 4,
-  };
+};
 
 function FetchOrderById() {
 
     const order = useSelector(state => state.OrderReducer.order);
     const dispatch = useDispatch();
     const { orderId } = useParams();
-    
+
 
     console.log(order);
     const isValidForUpdate = order?.orderStatus === "Pending" || order?.orderStatus === "Delivered";
@@ -38,62 +38,65 @@ function FetchOrderById() {
     }, [orderId])
 
     const [open, setOpen] = React.useState(false);
-    const handleCancelOpen = () => {setOpen(true);};
-    const handleCancelClose = () => {setOpen(false); };
-    
+    const handleCancelOpen = () => { setOpen(true); };
+    const handleCancelClose = () => { setOpen(false); };
 
     return (
-        <div>
+        <div className="all-order-card">
             {
                 order !== null &&
-                <div>
+                <div className="card-container">
                     {/* {console.log(order)} */}
-                    <p>Order ID: {order.id}</p>
-                    <p>Amount: {order.amount}</p>
-                    <p>Order Date: {order.orderDate}</p>
-                    <p>Expected Delivery Date: {order.deliveryDate}</p>
-                    <p>Payment Status: {order.paymentStatus}</p>
-                    <p>Order Status: {order.orderStatus}</p>
+                    <div >
+                        <h2>Order ID: {order.id}</h2>
+                        <p><strong>Amount: </strong>{order.amount}</p>
+                        <p><strong>Order Date: </strong>{order.orderDate}</p>
+                        <p><strong>Expected Delivery Date: </strong>{order.deliveryDate}</p>
+                        <p><strong>Payment Status: </strong>{order.paymentStatus}</p>
+                        <p><strong>Order Status: </strong>{order.orderStatus}</p>
 
-                    <p>Service ID: {order.service.id}</p>
-                    <p>Service Type: {order.service.type}</p>
-                    <p>Service Charges: {order.service.charges}</p>
+                        <p><strong>Service ID:</strong>{order.service.id}</p>
+                        <p><strong>Service Type:</strong> {order.service.type}</p>
+                        <p><strong>Service Charges: </strong>{order.service.charges}</p>
+                    </div>
+                    <div>
+                        <h5>Order Item Details:</h5>
+                        <p><strong>ID:</strong> {order.orderLineItem.id}</p>
+                        <p><strong>Name: </strong>{order.orderLineItem.name}</p>
+                        <p><strong>Quantity:</strong> {order.orderLineItem.quantity}</p>
+                        <p><strong>Material:</strong> {order.orderLineItem.material}</p>
+                        <p><strong>Instructions: </strong>{order.orderLineItem.instructions}</p>
 
-                    <p>Order Item Details:</p>
-                    <p>ID: {order.orderLineItem.id}</p>
-                    <p>Name: {order.orderLineItem.name}</p>
-                    <p>Quantity: {order.orderLineItem.quantity}</p>
-                    <p>Material: {order.orderLineItem.material}</p>
-                    <p>Instructions: {order.orderLineItem.instructions}</p>
+                        {/* <p><Link to={`/orders/cancel`}>Cancel Order</Link></p> */}
+                        <button className="cancel-order-button" onClick={handleCancelOpen}>Cancel Order</button>
+                        <Modal
+                            aria-labelledby="transition-modal-title"
+                            aria-describedby="transition-modal-description"
+                            open={open}
+                            onClose={handleCancelClose}
+                            closeAfterTransition
+                            slots={{ backdrop: Backdrop }}
+                            slotProps={{
+                                backdrop: {
+                                    timeout: 500,
+                                },
+                            }}
+                        >
+                            <Fade in={open}>
+                                <Box sx={{ ...style, ...{ width: 'auto' } }}>
+                                    <Typography id="transition-modal-title" variant="h6" component="h2">
+                                        Are you sure you want to cancel this order?
+                                    </Typography>
+                                    <Button variant="contained" onClick={() => { dispatch(cancelOrder(orderId)); handleCancelClose(); }} >Cancel Order</Button>
+                                    <Button variant="contained" onClick={() => { handleCancelClose() }} >Close</Button>
+                                </Box>
+                            </Fade>
+                        </Modal>
 
-                    {/* <p><Link to={`/orders/cancel`}>Cancel Order</Link></p> */}
-                    <button onClick={handleCancelOpen}>Cancel Order</button>
-                    <Modal
-                        aria-labelledby="transition-modal-title"
-                        aria-describedby="transition-modal-description"
-                        open={open}
-                        onClose={handleCancelClose}
-                        closeAfterTransition
-                        slots={{ backdrop: Backdrop }}
-                        slotProps={{
-                            backdrop: {
-                                timeout: 500,
-                            },
-                        }}
-                    >
-                        <Fade in={open}>
-                            <Box sx={style}>
-                                <Typography id="transition-modal-title" variant="h6" component="h2">
-                                    Are you sure you want to cancel this order?
-                                </Typography>
-                                <Button variant="contained" onClick={() => {dispatch(cancelOrder(orderId)); handleCancelClose();}} >Cancel Order</Button>
-                                <Button variant="contained" onClick={() => {handleCancelClose()}} >Close</Button>
-                            </Box>
-                        </Fade>
-                    </Modal>
-
-                    <p>{!isValidForUpdate && <Link to={`/order/details/update/${order.id}`} > Update Order details</Link>}</p>
-                </div>}
+                        <p>{!isValidForUpdate && <Link to={`/order/details/update/${order.id}`} > Update Order details</Link>}</p>
+                    </div>
+                </div>
+            }
         </div>
     )
 }
