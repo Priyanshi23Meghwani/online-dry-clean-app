@@ -3,7 +3,37 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import {fetchAddress,updateAddress} from '../../store/Actions/AddressAction';
 
-
+const states = [
+    "Andhra Pradesh",
+    "Arunachal Pradesh",
+    "Assam",
+    "Bihar",
+    "Chhattisgarh",
+    "Delhi",
+    "Goa",
+    "Gujarat",
+    "Haryana",
+    "Himachal Pradesh",
+    "Jharkhand",
+    "Karnataka",
+    "Kerala",
+    "Madhya Pradesh",
+    "Maharashtra",
+    "Manipur",
+    "Meghalaya",
+    "Mizoram",
+    "Nagaland",
+    "Odisha",
+    "Punjab",
+    "Rajasthan",
+    "Sikkim",
+    "Tamil Nadu",
+    "Telangana",
+    "Tripura",
+    "Uttarakhand",
+    "Uttar Pradesh",
+    "West Bengal"
+];
 function UpdateAddress() {
 
     const [id, setId] = useState("");
@@ -49,7 +79,8 @@ function UpdateAddress() {
     }
 
     return (
-        <div className="container">
+        <div style={{ maxWidth: "500px", margin: "0 auto" }}>
+             <h1 style={{ textAlign: "center" }}>Update Address Details</h1>
             <div className="form-group">
                 <label>Id:</label>
                 <input type="text" className="form-control" name='id' value={id} disabled />
@@ -75,16 +106,22 @@ function UpdateAddress() {
                     onChange={event => setCity(event.target.value)} />
             </div>
             <div className="form-group">
-                <label>State:</label>
-                <input type="text" className="form-control" name='state' value={state}
-                    onChange={event => setState(event.target.value)} />
+                <label>State</label>
+                <select name="state" value={state} onChange={(event) => setState(event.target.value)}>
+                    <option value="">Select a state</option>
+                    {states.map((state) => (
+                        <option key={state} value={state}>
+                            {state}
+                        </option>
+                    ))}
+                </select>
             </div>
             <div className="form-group">
                 <label>Pincode:</label>
                 <input type="text" className="form-control" name='pincode' value={pincode}
                     onChange={event => setPincode(event.target.value)} />
             </div>
-            <button onClick={handleButton}>Update</button>
+            <button onClick={handleButton} className="btn btn-primary btn-block">Update</button>
         </div>
     )
 }
