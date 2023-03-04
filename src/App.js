@@ -18,6 +18,7 @@ import DeleteService from './components/Service/deleteService';
 import Footer from './components/Home/Footer';
 
 import HomePage from './components/Dashboards/HomePage';
+import AdminOrderControls from './components/Dashboards/AdminOrderControls';
 
 function App() {
   return (
@@ -25,7 +26,11 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomePage/>}/>
+          <Route path="/customer" element={<HomePage/>}/>
+          <Route path="/admin" element={<HomePage/>}/>
+
           <Route path="/login" element={<Login/>}/>
+
           <Route path="/users" element={<FetchAllUsers/>} />
           <Route path="/user/:userId" element={<FetchUserById/>} />
           <Route path="/addUser" element={<AddUser/>} />
@@ -37,14 +42,15 @@ function App() {
           <Route path='/orders/add' element={<AddOrder/>} />
           <Route path='/order/details/update/:itemId' element={<UpdateOrderLineItem/>} />
           <Route path="/order/status/:orderId" element={<ChangeOrderStatus/>} />
-        
-          <Route path='/services/getall' element={<GetAllServices />} />
 
           <Route path='/updateAddress/:addressId' element={<UpdateAddress/>}/>
 
+          <Route path='/services/getall' element={<GetAllServices />} />
           <Route path='/service/add' element={<AddService />} />
           <Route path='/service/delete' element={<DeleteService />} />
           <Route path='/footer' element={<Footer />} />
+
+          <Route path='/admin/orders' element={<AdminOrderControls />} />
           
         </Routes>
       </BrowserRouter>
