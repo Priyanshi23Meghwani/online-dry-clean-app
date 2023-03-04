@@ -3,6 +3,7 @@ import FetchOrderById from "../Order/FetchOrderById";
 import GetAllServices from "../Service/getAllServices";
 import FetchUserById from "../User/FetchUserById";
 import AboutUs from "./AboutUs";
+import AdminServiceControls from "./AdminServiceControls";
 import Header from "./Header";
 import HeroSection from "./HeroSection";
 import TestimonialsList from "./Testimonials";
@@ -14,6 +15,7 @@ function HomePage(){
             <HeroSection/>
             <AboutUs/>
             <GetAllServices/>
+            {/* <AdminServiceControls/> */}
             <TestimonialsList/>
             {/* <FetchUserById/> */}
             <Footer/>

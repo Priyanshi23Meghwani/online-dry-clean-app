@@ -19,26 +19,29 @@ function DeleteService() {
   };
 
   return (
-    <div className="container mt-4">
-      <form className="p-4 bg-light rounded">
-        <div className="form-group">
-          <label htmlFor="serviceId">Service Id</label>
-          <input
-            type="text"
-            className="form-control"
-            id="serviceId"
-            value={serviceId}
-            onChange={(event) => setServiceId(event.target.value)}
-          />
-        </div>
-        <button
-          type="button"
-          className="btn btn-danger mt-3"
-          onClick={handleSubmit} disabled={!validateForm()}>Delete</button>
-        
+    <div>
+      <h2 className="delete-heading">Add Service</h2>
+      <div className="container mt-4">
+        <form className="p-4 bg-light rounded">
+          <div className="form-group">
+            <label htmlFor="serviceId">Service Id</label>
+            <input
+              type="text"
+              className="form-control"
+              id="serviceId"
+              value={serviceId}
+              onChange={(event) => setServiceId(event.target.value)}
+            />
+          </div>
+          <button
+            type="button"
+            className="delete-service-button"
+            onClick={handleSubmit} disabled={!validateForm()}>Delete</button>
+
           {/* Delete
         </button> */}
-      </form>
+        </form>
+      </div>
     </div>
   );
 }

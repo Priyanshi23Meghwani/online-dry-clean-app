@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 function Header() {
     const navigate = useNavigate();
+    const isAdmin=true;
     return (
         <div className="header">
             <div className="header-logo">
