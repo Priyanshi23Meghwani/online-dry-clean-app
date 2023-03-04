@@ -5,6 +5,7 @@ import FetchUserById from "../User/FetchUserById";
 import AboutUs from "./AboutUs";
 import Header from "./Header";
 import HeroSection from "./HeroSection";
+import TestimonialsList from "./Testimonials";
 
 function HomePage(){
     return(
@@ -13,6 +14,7 @@ function HomePage(){
             <HeroSection/>
             <AboutUs/>
             <GetAllServices/>
+            <TestimonialsList/>
             {/* <FetchUserById/> */}
             <Footer/>
         </div>

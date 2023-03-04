@@ -23,17 +23,17 @@ function GetAllServices() {
 
     const hy = [{
         name: 'PickUp',
-        desc: "If you are in an urgent need of laundry, we can come right at your doorstep for a pick-up.",
+        desc: '"If you are in an urgent need of laundry, we can come right at your doorstep for a pick-up."',
         img: image
     },
     {
         name: 'DropOff',
-        desc: "We ensure delivery in the quickest of the turnaround time in the industry. Superior quality of service with speed!",
+        desc: '"We ensure delivery in the quickest of the turnaround time in the industry. Superior quality of service with speed!"',
         img: drop
     },
     {
         name: 'PickUp+DropOff',
-        desc: "We have pioneered the concept of pickup and delivery in the shortest possible time. We intend keeping it that way!",
+        desc: '"We have pioneered the concept of pickup and delivery in the shortest possible time. We intend keeping it that way!"',
         img: both
     }]
 

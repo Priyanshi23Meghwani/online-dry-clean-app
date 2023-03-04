@@ -1,0 +1,30 @@
+.testimonial{
+    margin: 80px 0;  
+}
+
+.testimonial-allcards{
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.testimonial-card {
+    width: 30%;
+    height: 18rem;
+    padding: 30px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.testimonial-description {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    
+}
+
+.testimonial-name {
+    font-size: 1.2rem;
+    color: blue;
+}
