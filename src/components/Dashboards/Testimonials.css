@@ -10,12 +10,15 @@
 
 .testimonial-card {
     width: 30%;
-    height: 18rem;
+    height: 22rem;
     padding: 30px;
     border-radius: 5px;
     background-color: #fff;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     text-align: center;
+    font-size: 16px;
+  line-height: 1.5;
+  color: #666;
 }
 
 .testimonial-description {
@@ -26,5 +29,17 @@
 
 .testimonial-name {
     font-size: 1.2rem;
-    color: blue;
+    color: #18aaf0;
+}
+
+@media (max-width: 768px){
+    .testimonial-allcards{
+       flex-direction: column;
+    
+    }
+    .testimonial-card {
+        width: 100%;
+        height: fit-content;
+        margin: 20px 0;
+    }
 }

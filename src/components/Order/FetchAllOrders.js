@@ -17,7 +17,7 @@ function FetchAllOrders() {
         // <div>Hello</div>
         <div>
             <h1>All Orders</h1>
-            <table className='table  table-dark table-hover'>
+            <table className='table  table-hover'>
                 <thead>
                     <tr>
                         <th>Order Id</th>

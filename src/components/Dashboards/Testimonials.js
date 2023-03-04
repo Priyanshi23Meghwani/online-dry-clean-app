@@ -17,13 +17,14 @@ const TestimonialCard = ({ testimonial }) => {
     return (
         <div className="testimonial-card">
             <p className="testimonial-description">{testimonial.desc}</p>
-            <p className="testimonial-name">- {testimonial.name}</p>
+           <strong> <p className="testimonial-name" >- {testimonial.name}</p></strong>
         </div>
     );
 };
 
 const TestimonialsList = () => {
     return (
+        <div className="container">
         <div className='testimonial' >
             <h3 style={{ textAlign: 'center', marginBottom: '3rem', fontSize: '48px', fontWeight: 'bold' }}>Testimonials</h3>
             <div className='testimonial-allcards'>
@@ -31,6 +32,7 @@ const TestimonialsList = () => {
                     <TestimonialCard key={index} testimonial={testimonial} />
                 ))}
             </div>
+        </div>
         </div>
     );
 };

@@ -16,7 +16,7 @@ function FetchAllUsers() {
     return (
         <div>
             <h1>All Users</h1>
-            <table className='table table-dark table-hover'>
+            <table className='table  table-hover'>
                 <thead>
                     <tr>
                     <th>Id</th>
