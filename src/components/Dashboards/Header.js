@@ -17,7 +17,7 @@ function Header() {
         dispatch(logoutUser());
         localStorage.removeItem('myuser');
         navigate('/');
-      };
+    };
 
     return (
         <div className="header">
@@ -31,10 +31,10 @@ function Header() {
                     <li className="header-nav-ul-li"> <a href="#">SERVICES</a> </li>
 
                     {items && items.role == "customer" ?
-                        <li className="header-nav-ul-li"> <a href={`/user/${items.userId}`}>MY PROFILE</a> </li>: ""}
+                        <li className="header-nav-ul-li"> <a href={`/user/${items.userId}`}>MY PROFILE</a> </li> : ""}
 
                     {items && items.role == "customer" ?
-                        <li className="header-nav-ul-li"> <a href={`/user/orders/${items.userId}`}>MY ORDERS</a> </li>: ""}
+                        <li className="header-nav-ul-li"> <a href={`/user/orders/${items.userId}`}>MY ORDERS</a> </li> : ""}
                 </ul>
             </nav>
             {!items ?

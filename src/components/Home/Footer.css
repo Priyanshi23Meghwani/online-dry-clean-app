@@ -11,19 +11,11 @@
     width: 200px;
 }
 
-/* .img-fluid{
-    height: 100px;
-    width: 200px;
-} */
 footer{
     width: 100%;
-    /* position: absolute;
-    bottom: 0; */
     background: linear-gradient(to right, #22241bcb, #153649);
     color: #fff;
-    padding: 67px 50px 0px;
-    /* border-top-left-radius: 112px;
-    border-top-right-radius: px; */
+    padding: 100px 50px;
     font-size: 13px;
     line-height: 20px;
 }
@@ -46,10 +38,6 @@ footer{
     flex-basis: 15%; /* Updated selector */
 }
 
-/* .logo{
-    width: 80px;
-    margin-bottom: 30px;
-} */
 
 .col h3{
     width: fit-content;

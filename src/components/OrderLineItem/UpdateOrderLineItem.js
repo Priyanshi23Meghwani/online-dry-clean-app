@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { fetchOrderById } from "../../store/Actions/OrderAction";
 import { updateOrderLineItem } from "../../store/Actions/OrderLineItemAction";
+import './UpdateOrderLineItem.css';
 
 function UpdateOrderLineItem() {
 
@@ -11,12 +12,11 @@ function UpdateOrderLineItem() {
     const [quantity, setQuantity] = useState(0);
     const [material, setMaterial] = useState("");
     const [instructions, setInstructions] = useState("");
-
     const { itemId } = useParams();
     const dispatch = useDispatch();
     const order = useSelector(state => state.OrderReducer.order);
-    
-    
+
+
     useEffect(() => {
         dispatch(fetchOrderById(itemId));
     }, [dispatch, itemId]);
@@ -44,39 +44,40 @@ function UpdateOrderLineItem() {
 
     const validateForm = () => {
         return (
-          id !== "" &&
-          type !== "" &&
-          quantity !== "" &&
-          material !== "" &&
-          instructions !== ""
+            id !== "" &&
+            type !== "" &&
+            quantity !== "" &&
+            material !== "" &&
+            instructions !== ""
         );
-      };
+    };
 
     return (
-
-        <div>
-            <h1> Update OrderLine Item if Order Status is pending</h1>
-            <div>
-                <label>OrderLineItem Type</label>
-                <input type="text" name="Name" value={type}
-                    onChange={event => setType(event.target.value)} />
+        <div className='item-container-outer'>
+            <div className='item-container'>
+                <h1 style={{textAlign:'center',marginBottom:'40px'}}> Update Order Item Details</h1>
+                <div>
+                    <label>OrderLineItem Type</label>
+                    <input type="text" name="Name" value={type}
+                        onChange={event => setType(event.target.value)} />
+                </div>
+                <div>
+                    <label>OrderLineItem Quantity</label>
+                    <input type="number" name="Quantity" value={quantity}
+                        onChange={event => setQuantity(event.target.value)} />
+                </div>
+                <div>
+                    <label>OrderLineItem Material</label>
+                    <input type="text" name="Material" value={material}
+                        onChange={event => setMaterial(event.target.value)} />
+                </div>
+                <div>
+                    <label>OrderLineItem Instructions</label>
+                    <input type="text" name="Instructions" value={instructions}
+                        onChange={event => setInstructions(event.target.value)} />
+                </div>
+                <button className='item-form-button' onClick={update} disabled={!validateForm()}>Update</button>
             </div>
-            <div>
-                <label>OrderLineItem Quantity</label>
-                <input type="number" name="Quantity" value={quantity}
-                    onChange={event => setQuantity(event.target.value)} />
-            </div>
-            <div>
-                <label>OrderLineItem Material</label>
-                <input type="text" name="Material" value={material}
-                    onChange={event => setMaterial(event.target.value)} />
-            </div>
-            <div>
-                <label>OrderLineItem Instructions</label>
-                <input type="text" name="Instructions" value={instructions}
-                    onChange={event => setInstructions(event.target.value)} />
-            </div>
-            <button onClick={update} disabled={!validateForm()}>Update</button>
         </div>
     )
 }

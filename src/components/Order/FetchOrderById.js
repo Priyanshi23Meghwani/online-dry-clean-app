@@ -1,13 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, Link } from 'react-router-dom';
 import { fetchOrderById, cancelOrder } from '../../store/Actions/OrderAction';
-import Backdrop from '@mui/material/Backdrop';
-import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
-import Fade from '@mui/material/Fade';
 import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
 import "./FetchOrderById.css";
 
 
@@ -17,27 +13,38 @@ const style = {
     left: '50%',
     transform: 'translate(-50%, -50%)',
     width: 400,
-    bgcolor: 'background.paper',
+    backgroundColor: '#fff',
     border: '2px solid #000',
-    boxShadow: 24,
     p: 4,
 };
+
 
 function FetchOrderById() {
 
     const order = useSelector(state => state.OrderReducer.order);
     const dispatch = useDispatch();
     const { orderId } = useParams();
-
+    const items = JSON.parse(localStorage.getItem('myuser'));
     const isValidForUpdate = order?.orderStatus === "Pending" || order?.orderStatus === "Delivered";
 
     useEffect(() => {
         dispatch(fetchOrderById(orderId));
     }, [orderId])
 
-    const [open, setOpen] = React.useState(false);
-    const handleCancelOpen = () => { setOpen(true); };
-    const handleCancelClose = () => { setOpen(false); };
+    const [open, setOpen] = useState(false);
+    const handleOpen = () => {
+        setOpen(true);
+    };
+    const handleClose = () => {
+        setOpen(false);
+    };
+    const handleOk = () => {
+        // do something when "OK" button is clicked
+        handleClose();
+    };
+    // const [open, setOpen] = React.useState(false);
+    // const handleCancelOpen = () => { setOpen(true); };
+    // const handleCancelClose = () => { setOpen(false); };
 
     return (
         <div className="all-order-card">
@@ -65,33 +72,22 @@ function FetchOrderById() {
                         <p><strong>Material:</strong> {order.orderLineItem.material}</p>
                         <p><strong>Instructions: </strong>{order.orderLineItem.instructions}</p>
 
-                        {/* <p><Link to={`/orders/cancel`}>Cancel Order</Link></p> */}
-                        <button className="cancel-order-button" onClick={handleCancelOpen}>Cancel Order</button>
-                        <Modal
-                            aria-labelledby="transition-modal-title"
-                            aria-describedby="transition-modal-description"
-                            open={open}
-                            onClose={handleCancelClose}
-                            closeAfterTransition
-                            slots={{ backdrop: Backdrop }}
-                            slotProps={{
-                                backdrop: {
-                                    timeout: 500,
-                                },
-                            }}
-                        >
-                            <Fade in={open}>
-                                <Box sx={{ ...style, ...{ width: 'auto' } }}>
-                                    <Typography id="transition-modal-title" variant="h6" component="h2">
-                                        Are you sure you want to cancel this order?
-                                    </Typography>
-                                    <Button variant="contained" onClick={() => { dispatch(cancelOrder(orderId)); handleCancelClose(); }} >Cancel Order</Button>
-                                    <Button variant="contained" onClick={() => { handleCancelClose() }} >Close</Button>
-                                </Box>
-                            </Fade>
+                        {items && items.role == "customer" ?
+                            <button className="cancel-order-button" onClick={handleOpen}>Cancel Order</button> : ""}
+                        <Modal open={open} onClose={handleClose}>
+                            <div sx={style}>
+                                <h2 id="simple-modal-title">Cancel Order</h2>
+                                <p id="simple-modal-description">
+                                Are you sure you want to cancel this order?
+                                </p>
+                                <Button variant="contained"  color="primary" onClick={() => { dispatch(cancelOrder(orderId)); handleClose(); }}>Cancel Order</Button>
+                                <Button variant="contained" color="secondary"  onClick={() => { handleClose() }}>Close</Button>
+                            </div>
                         </Modal>
 
-                        <p>{!isValidForUpdate && <Link to={`/order/details/update/${order.id}`} > Update Order details</Link>}</p>
+                        
+                        {items && items.role == "customer" ?
+                            <p>{!isValidForUpdate && <Link to={`/order/details/update/${order.id}`} > Update Order details</Link>}</p> : ""}
                     </div>
                 </div>
             }

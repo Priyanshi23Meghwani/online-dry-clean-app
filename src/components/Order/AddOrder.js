@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from 'react-redux';
 import { addOrder } from "../../store/Actions/OrderAction";
+import "./AddOrder.css";
 
 function AddOrder() {
 
@@ -61,48 +62,50 @@ function AddOrder() {
     };
 
     return (
-        <div className="container">
+        <div className="add-order-container-outer">
+            <div className="add-order-container">
+                <h2 style={{textAlign:'center'}}>Place An Order</h2>
+                <div className="add-order-container-field">
+                    <label className="add-order-form-label" >Order Date</label><br />
+                    <input type="date" name="OrderDate" value={orderDate}
+                        onChange={event => setOrderDate(event.target.value)} />
+                </div>
+                <div className="add-order-container-field">
+                    <label className="add-order-form-label">Delivery Date</label><br />
+                    <input type="date" min="2023-03-08" name="DeliveryDate" value={deliveryDate}
+                        onChange={event => setDeliveryDate(event.target.value)} />
+                </div>
+                <div className="add-order-container-field">
+                    <label className="add-order-form-label">Service</label><br />
+                    <select value={service} onChange={event => setService(event.target.value)}>
+                        <option value="1">PickUp</option>
+                        <option value="2">DropOff</option>
+                        <option value="3">Both</option>
+                    </select>
+                </div>
+                <div className="add-order-container-field">
+                    <label className="add-order-form-label">Item Type</label><br />
+                    <input type="text" name="ItemType" value={itemType}
+                        onChange={event => setItemType(event.target.value)} />
+                </div>
+                <div className="add-order-container-field">
+                    <label className="add-order-form-label">Quantity</label><br />
+                    <input type="number" min={1} name="Quantity" value={quantity}
+                        onChange={event => setQuantity(event.target.value)} />
+                </div>
+                <div className="add-order-container-field">
+                    <label className="add-order-form-label">Material</label><br />
+                    <input type="text" name="Material" value={material}
+                        onChange={event => setMaterial(event.target.value)} />
+                </div>
+                <div className="add-order-container-field">
+                    <label className="add-order-form-label">Instructions</label><br />
+                    <input type="text" name="Instructions" value={instructions}
+                        onChange={event => setInstructions(event.target.value)} />
+                </div>
+                <button className="add-order-form-button" onClick={placeOrder} disabled={!validateForm()}>Place Order</button>
 
-            <div>
-                <label>Order Date</label>
-                <input type="date" name="OrderDate" value={orderDate}
-                    onChange={event => setOrderDate(event.target.value)} />
             </div>
-            <div>
-                <label>Delivery Date</label>
-                <input type="date" min="2023-03-08" name="DeliveryDate" value={deliveryDate}
-                    onChange={event => setDeliveryDate(event.target.value)} />
-            </div>
-            <div>
-                <label>Service</label>
-                <select value={service} onChange={event => setService(event.target.value)}>
-                    <option value="1">PickUp</option>
-                    <option value="2">DropOff</option>
-                    <option value="3">Both</option>
-                </select>
-            </div>
-            <div>
-                <label>Item Type</label>
-                <input type="text" name="ItemType" value={itemType}
-                    onChange={event => setItemType(event.target.value)} />
-            </div>
-            <div>
-                <label>Quantity</label>
-                <input type="number" min={1} name="Quantity" value={quantity}
-                    onChange={event => setQuantity(event.target.value)} />
-            </div>
-            <div>
-                <label>Material</label>
-                <input type="text" name="Material" value={material}
-                    onChange={event => setMaterial(event.target.value)} />
-            </div>
-            <div>
-                <label>Instructions</label>
-                <input type="text" name="Instructions" value={instructions}
-                    onChange={event => setInstructions(event.target.value)} />
-            </div>
-            <button onClick={placeOrder} disabled={!validateForm()}>Place Order</button>
-
         </div>
     )
 }
