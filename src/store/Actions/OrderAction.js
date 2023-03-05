@@ -25,6 +25,18 @@ export function fetchOrderById(orderId) {
     }
 }
 
+export const fetchOrdersByStatus = (orderStatus) => {
+    return(dispatch) => {
+        return axios.get('http://localhost:8080/orders/status/' + orderStatus)
+        .then(resp => {
+            dispatch({
+                type: 'success',
+                payload: resp.data
+            })
+        })
+    }
+    }
+
 export function addOrder(order) {
     return (dispatch) => {
         return axios.post("http://localhost:8080/addOrder", order)

@@ -20,6 +20,13 @@ export default function OrderReducer(state = initialState, action) {
             order: action.payload
         }
     }
+    else if (action.type === "success") {
+        return {
+            ...state,
+            orders: action.payload,
+            
+        };
+    }
     else if (action.type === 'order/fetchbyuserid') {
         return {
             ...state,
