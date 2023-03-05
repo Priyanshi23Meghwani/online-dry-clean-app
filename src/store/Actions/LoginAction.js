@@ -34,3 +34,9 @@ export const loginUser = (payload, navigate) => async (dispatch) => {
       });
     }
   };
+
+  export const logoutUser = () => (dispatch) => {
+    dispatch({
+      type: 'LOGOUT',
+    });
+  };

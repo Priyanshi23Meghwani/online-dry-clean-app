@@ -2,10 +2,23 @@ import React from "react";
 import "./Header.css";
 import Logo from "../../assets/FabCare.png";
 import { useNavigate } from "react-router-dom";
+import { logoutUser } from '../../store/Actions/LoginAction';
+import { useSelector, useDispatch } from 'react-redux';
+
 
 function Header() {
+    // const user = useSelector((state) => state.LoginReducer.user);
     const navigate = useNavigate();
     const items = JSON.parse(localStorage.getItem('myuser'));
+    const dispatch = useDispatch();
+
+    const handleLogout = () => {
+        console.log("inside handleLogout");
+        dispatch(logoutUser());
+        localStorage.removeItem('myuser');
+        navigate('/');
+      };
+
     return (
         <div className="header">
             <div className="header-logo">
@@ -33,13 +46,13 @@ function Header() {
             {items && items.role == "admin" ?
                 <div className="header-buttons">
                     <button className="header-buttons-btn" onClick={() => navigate("/admin/orders")}>ORDERS</button>
-                    <button className="header-buttons-btn" onClick={() => navigate("/addUser")}>LOGOUT</button>
+                    <button className="header-buttons-btn" onClick={handleLogout}>LOGOUT</button>
                 </div> : ""}
 
             {items && items.role == "customer" ?
                 <div className="header-buttons">
                     <button className="header-buttons-btn" onClick={() => navigate("/orders/add")}>PLACE ORDER</button>
-                    <button className="header-buttons-btn" onClick={() => navigate("/addUser")}>LOGOUT</button>
+                    <button className="header-buttons-btn" onClick={handleLogout}>LOGOUT</button>
                 </div> : ""}
 
         </div>

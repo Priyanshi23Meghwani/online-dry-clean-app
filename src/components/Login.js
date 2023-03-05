@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { loginUser } from '../store/Actions/LoginAction';
+import { loginUser, logoutUser } from '../store/Actions/LoginAction';
 
 function Login() {
     const [uname, setUname] = useState('');
@@ -28,6 +28,12 @@ function Login() {
             };
             dispatch(loginUser(payload, navigate));
         }
+    };
+
+
+    const doLogout = () => {
+        dispatch(logoutUser());
+        localStorage.removeItem('myuser');
     };
 
     return (

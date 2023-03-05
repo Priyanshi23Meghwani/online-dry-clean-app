@@ -14,7 +14,14 @@ const initialState = {
         isLoggedIn: false,
         user: {},
       };
+    }  else if (action.type === 'LOGOUT') {
+      return {
+        isLoggedIn: false,
+        user: {},
+      };
     } else {
       return state;
     }
   };
+
+  
