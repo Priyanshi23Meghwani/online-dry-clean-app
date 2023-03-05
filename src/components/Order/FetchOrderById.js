@@ -31,17 +31,17 @@ function FetchOrderById() {
         dispatch(fetchOrderById(orderId));
     }, [orderId])
 
-    const [open, setOpen] = useState(false);
-    const handleOpen = () => {
-        setOpen(true);
-    };
-    const handleClose = () => {
-        setOpen(false);
-    };
-    const handleOk = () => {
-        // do something when "OK" button is clicked
-        handleClose();
-    };
+    // const [open, setOpen] = useState(false);
+    // const handleOpen = () => {
+    //     setOpen(true);
+    // };
+    // const handleClose = () => {
+    //     setOpen(false);
+    // };
+    // const handleOk = () => {
+    //     // do something when "OK" button is clicked
+    //     handleClose();
+    // };
     // const [open, setOpen] = React.useState(false);
     // const handleCancelOpen = () => { setOpen(true); };
     // const handleCancelClose = () => { setOpen(false); };
@@ -72,9 +72,11 @@ function FetchOrderById() {
                         <p><strong>Material:</strong> {order.orderLineItem.material}</p>
                         <p><strong>Instructions: </strong>{order.orderLineItem.instructions}</p>
 
-                        {items && items.role == "customer" ?
+                        {/* {items && items.role == "customer" ?
                             <button className="cancel-order-button" onClick={handleOpen}>Cancel Order</button> : ""}
-                        <Modal open={open} onClose={handleClose}>
+                        */}
+                       
+                        {/* <Modal open={open} onClose={handleClose}>
                             <div sx={style}>
                                 <h2 id="simple-modal-title">Cancel Order</h2>
                                 <p id="simple-modal-description">
@@ -83,11 +85,11 @@ function FetchOrderById() {
                                 <Button variant="contained"  color="primary" onClick={() => { dispatch(cancelOrder(orderId)); handleClose(); }}>Cancel Order</Button>
                                 <Button variant="contained" color="secondary"  onClick={() => { handleClose() }}>Close</Button>
                             </div>
-                        </Modal>
+                        </Modal> */}
 
                         
-                        {items && items.role == "customer" ?
-                            <p>{!isValidForUpdate && <Link to={`/order/details/update/${order.id}`} > Update Order details</Link>}</p> : ""}
+                        {/* {items && items.role == "customer" ?
+                            <p>{!isValidForUpdate && <Link to={`/order/details/update/${order.id}`} > Update Order details</Link>}</p> : ""} */}
                     </div>
                 </div>
             }

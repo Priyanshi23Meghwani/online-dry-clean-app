@@ -1,26 +1,26 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, Link } from 'react-router-dom';
 import { fetchOrdersByUserId, cancelOrder } from '../../store/Actions/OrderAction';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 import Backdrop from '@mui/material/Backdrop';
 import Box from '@mui/material/Box';
-import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import "./FetchOrderByUserId.css";
 
-const style = {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: 400,
-    bgcolor: 'background.paper',
-    border: '2px solid #000',
-    boxShadow: 24,
-    p: 4,
-};
+// const style = {
+//     position: 'absolute',
+//     top: '50%',
+//     left: '50%',
+//     transform: 'translate(-50%, -50%)',
+//     width: 400,
+//     bgcolor: 'white',
+//     border: '2px solid #000',
+//     boxShadow: 24,
+//     p: 4,
+// };
 
 function FetchOrderByUserId() {
     const orders = useSelector(state => state.OrderReducer.orders);
@@ -31,9 +31,9 @@ function FetchOrderByUserId() {
         dispatch(fetchOrdersByUserId(userId));
     }, [userId]);
 
-    const [open, setOpen] = React.useState(false);
-    const handleCancelOpen = () => { setOpen(true); };
-    const handleCancelClose = () => { setOpen(false); };
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     return (
         <div className="all-order-card">
@@ -61,32 +61,24 @@ function FetchOrderByUserId() {
                                 <p><strong>Quantity:</strong> {order.orderLineItem.quantity}</p>
                                 <p><strong>Material:</strong> {order.orderLineItem.material}</p>
                                 <p><strong>Instructions: </strong>{order.orderLineItem.instructions}</p>
-                                <p>{order.orderStatus === "Pending" ? <button className="cancel-order-button"><Link style={{color:'white',textDecoration:'none'}}to={`/order/details/update/${order.id}`} > Update Order details</Link></button> : ""}</p>
-                                <p>{order.orderStatus === "Pending" ? <button className="cancel-order-button" onClick={handleCancelOpen}>Cancel Order</button> : ""}</p>
+                                <p>{order.orderStatus === "Pending" ? <button className="cancel-order-button"><Link style={{ color: 'white', textDecoration: 'none' }} to={`/order/details/update/${order.id}`} > Update Order details</Link></button> : ""}</p>
+                                <p>{order.orderStatus === "Pending" ? <button className="cancel-order-button" onClick={() => { handleShow() }}>Cancel Order</button> : ""}</p>
 
-                                <Modal
-                                    aria-labelledby="transition-modal-title"
-                                    aria-describedby="transition-modal-description"
-                                    open={open}
-                                    onClose={handleCancelClose}
-                                    closeAfterTransition
-                                    slots={{ backdrop: Backdrop }}
-                                    slotProps={{
-                                        backdrop: {
-                                            timeout: 500,
-                                        },
-                                    }}
-                                >
-                                    <Fade in={open}>
-                                        <Box sx={{ ...style, ...{ width: 'auto' } }}>
-                                            <Typography id="transition-modal-title" variant="h6" component="h2">
-                                                Are you sure you want to cancel this order?
-                                            </Typography>
-                                            <Button variant="contained" onClick={() => { dispatch(cancelOrder(order.id)); handleCancelClose(); }} >Cancel Order</Button>
-                                            <Button variant="contained" onClick={() => { handleCancelClose() }} >Close</Button>
-                                        </Box>
-                                    </Fade>
+                                <Modal show={show} onHide={handleClose}>
+                                    <Modal.Header closeButton>
+                                        <Modal.Title>Cancel Order</Modal.Title>
+                                    </Modal.Header>
+                                    <Modal.Body>Are you sure you want to cancel this order?</Modal.Body>
+                                    <Modal.Footer>
+                                        <Button variant="secondary" onClick={handleClose}>
+                                            Close
+                                        </Button>
+                                        <Button variant="primary" onClick={() => { dispatch(cancelOrder(order.id)); handleClose(); }}>
+                                            Cancel Order
+                                        </Button>
+                                    </Modal.Footer>
                                 </Modal>
+
                             </div>
                         </div>
                     ))
