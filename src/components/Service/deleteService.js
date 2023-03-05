@@ -19,7 +19,7 @@ function DeleteService() {
   };
 
   return (
-    <div>
+    <div className="delete-service-container">
       <h2 className="delete-heading">Add Service</h2>
       <div className="container mt-4">
         <form className="p-4 bg-light rounded">

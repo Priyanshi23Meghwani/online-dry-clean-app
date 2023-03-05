@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { fetchOrderById } from "../../store/Actions/OrderAction";
 import { updateOrderStatus } from "../../store/Actions/OrderAction";
+import "./ChangeOrderStatus.css";
 
 
 const allStatus = [
@@ -43,7 +44,8 @@ function ChangeOrderStatus() {
     }
 
     return (
-        <div className="container">
+        <div className="container change-status-container">
+            <h2 className="change-status-heading">Change Order Status</h2>
             <div className="form-group">
                 <label>Order Id</label>
                 <input type="number" name="orderId" id="orderId" className="form-control" value={id}

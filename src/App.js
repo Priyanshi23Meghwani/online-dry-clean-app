@@ -19,6 +19,7 @@ import Footer from './components/Home/Footer';
 
 import HomePage from './components/Dashboards/HomePage';
 import AdminOrderControls from './components/Dashboards/AdminOrderControls';
+import Header from './components/Dashboards/Header';
 
 function App() {
   return (
@@ -41,16 +42,16 @@ function App() {
           <Route path='/orders/cancel' element={<CancelOrder/>} />
           <Route path='/orders/add' element={<AddOrder/>} />
           <Route path='/order/details/update/:itemId' element={<UpdateOrderLineItem/>} />
-          <Route path="/order/status/:orderId" element={<ChangeOrderStatus/>} />
+          <Route path="/order/status/:orderId" element={[<Header/>,<ChangeOrderStatus/>]} />
 
           <Route path='/updateAddress/:addressId' element={<UpdateAddress/>}/>
 
           <Route path='/services/getall' element={<GetAllServices />} />
-          <Route path='/service/add' element={<AddService />} />
-          <Route path='/service/delete' element={<DeleteService />} />
+          <Route path='/service/add' element={[<Header/>,<AddService />]} />
+          <Route path='/service/delete' element={[<Header/>,<DeleteService />]} />
           <Route path='/footer' element={<Footer />} />
 
-          <Route path='/admin/orders' element={<AdminOrderControls />} />
+          <Route path='/admin/orders' element={[<Header/>,<AdminOrderControls />]} />
           
         </Routes>
       </BrowserRouter>
