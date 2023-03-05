@@ -29,8 +29,6 @@ function FetchOrderById() {
     const dispatch = useDispatch();
     const { orderId } = useParams();
 
-
-    console.log(order);
     const isValidForUpdate = order?.orderStatus === "Pending" || order?.orderStatus === "Delivered";
 
     useEffect(() => {

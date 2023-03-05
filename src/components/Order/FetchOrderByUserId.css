@@ -1,0 +1,13 @@
+.all-order-card{
+    margin-top:150px;
+}
+
+.card-rows{
+    display: flex;
+    flex-direction: column;
+}
+
+.card{
+    display: flex;
+    flex-direction: row;
+}

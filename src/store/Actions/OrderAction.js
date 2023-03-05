@@ -25,19 +25,6 @@ export function fetchOrderById(orderId) {
     }
 }
 
-export function fetchOrderByUserId(userid) {
-    return (dispatch) => {
-        return axios.get('http://localhost:8080/user/orders/' + userid)
-            .then(resp => {
-                dispatch({
-                    type: 'order/fetchbyuserid',
-                    payload: resp.data
-                });
-            })
-    }
-
-}
-
 export function addOrder(order) {
     return (dispatch) => {
         return axios.post("http://localhost:8080/addOrder", order)
@@ -54,9 +41,22 @@ export function addOrder(order) {
     }
 }
 
-export function cancelOrder(orderId){
+export function fetchOrdersByUserId(userId) {
+    return (dispatch) => {
+        return axios.get('http://localhost:8080/user/orders/'+userId).then(
+            resp => {
+                dispatch({
+                    type: 'order/fetchbyuserid',
+                    payload: resp.data
+                });
+            })
+    }
 
-    return(dispatch) => {
+}
+
+export function cancelOrder(orderId) {
+
+    return (dispatch) => {
         return axios.put("http://localhost:8080/orders/cancelOrder/" + orderId).then(
             resp => {
                 alert("Order is Cancelled");

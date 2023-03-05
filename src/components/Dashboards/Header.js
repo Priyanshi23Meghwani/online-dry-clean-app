@@ -34,7 +34,7 @@ function Header() {
                         <li className="header-nav-ul-li"> <a href={`/user/${items.userId}`}>MY PROFILE</a> </li>: ""}
 
                     {items && items.role == "customer" ?
-                        <li className="header-nav-ul-li"> <a href="#">MY ORDERS</a> </li>: ""}
+                        <li className="header-nav-ul-li"> <a href={`/user/orders/${items.userId}`}>MY ORDERS</a> </li>: ""}
                 </ul>
             </nav>
             {!items ?

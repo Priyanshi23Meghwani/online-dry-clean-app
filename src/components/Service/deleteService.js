@@ -20,7 +20,7 @@ function DeleteService() {
 
   return (
     <div className="delete-service-container">
-      <h2 className="delete-heading">Add Service</h2>
+      <h2 className="delete-heading">Delete Service</h2>
       <div className="container mt-4">
         <form className="p-4 bg-light rounded">
           <div className="form-group">

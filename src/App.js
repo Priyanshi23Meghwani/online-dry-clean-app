@@ -20,6 +20,7 @@ import Footer from './components/Home/Footer';
 import HomePage from './components/Dashboards/HomePage';
 import AdminOrderControls from './components/Dashboards/AdminOrderControls';
 import Header from './components/Dashboards/Header';
+import FetchOrderByUserId from './components/Order/FetchOrderByUserId';
 
 function App() {
   return (
@@ -39,6 +40,8 @@ function App() {
 
           <Route path='/orders/all' element={<FetchAllOrders/>} />
           <Route path='/orders/details/:orderId' element={<FetchOrderById/>} />
+          <Route path='/user/orders/:userId' element={[<Header/>,<FetchOrderByUserId/>]} />
+
           <Route path='/orders/cancel' element={<CancelOrder/>} />
           <Route path='/orders/add' element={<AddOrder/>} />
           <Route path='/order/details/update/:itemId' element={<UpdateOrderLineItem/>} />
