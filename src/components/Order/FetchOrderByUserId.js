@@ -11,10 +11,12 @@ function FetchOrderByUserId() {
     const { userId } = useParams();
     const dispatch = useDispatch();
 
+    // fetching all orders of logged in user
     useEffect(() => {
         dispatch(fetchOrdersByUserId(userId));
     }, [userId]);
 
+    // controls for cancel order modal 
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);

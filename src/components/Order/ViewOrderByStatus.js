@@ -9,7 +9,8 @@ const allStatus = [
     "In Processing",
     "Ready for Dispatch",
     "Dispatched",
-    "Delivered"
+    "Delivered",
+    "Cancelled"
 ]
 
 function ViewOrderByStatus() {
@@ -19,13 +20,14 @@ function ViewOrderByStatus() {
     const dispatch = useDispatch();
     const orders = useSelector(state => state.OrderReducer.orders);
 
-
+    // fetching all orders with selected order status
     useEffect(() => {
         if (orderStatus) {
             dispatch(fetchOrdersByStatus(orderStatus));
         }
     }, [dispatch, orderStatus]);
 
+    // for updating status
     const handleStatusChange = (event) => {
         setOrderStatus(event.target.value);
     }

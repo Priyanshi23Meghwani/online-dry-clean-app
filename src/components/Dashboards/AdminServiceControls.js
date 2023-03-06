@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 
 function AdminServiceControls() {
     const navigate = useNavigate();
-
     return (
 
         <div style={{ margin: '50px 0', display: 'flex', alignItems: 'center', justifyContent: 'space-around' }}>

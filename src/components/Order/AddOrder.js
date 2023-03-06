@@ -71,6 +71,7 @@ function AddOrder() {
             <div className="add-order-container">
                 <h2 style={{ textAlign: 'center' }}>Place An Order</h2>
 
+                {/* disabling 2 days from the order date to be selected as delivery date */}
                 <div className="add-order-container-field">
                     <label className="add-order-form-label">Delivery Date</label><br />
                     <input type="date" min={minDeliveryDate} name="DeliveryDate" value={deliveryDate}

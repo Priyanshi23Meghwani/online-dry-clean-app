@@ -7,6 +7,7 @@ import Forbidden from '../Dashboards/Forbidden';
 
 function FetchAllOrders() {
 
+    // fetching user obj from local storage to verify user role
     const items = JSON.parse(localStorage.getItem('myuser'));
     const allOrders = useSelector(state=>state.OrderReducer.orders);
     const dispatch = useDispatch();
@@ -17,6 +18,7 @@ function FetchAllOrders() {
 
     return (
         
+        // component to be rendered if role is admin
         <div>
         {items.role === "admin"?
         <div>

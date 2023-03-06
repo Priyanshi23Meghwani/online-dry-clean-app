@@ -2,7 +2,7 @@ import React from "react";
 import "./Footer.css";
 import Logo from "../../assets/FabCare.png";
 
-
+// footer component
 const Footer = () => {
 
     return(
@@ -14,10 +14,8 @@ const Footer = () => {
                     </div>
                     <div className="col-md-3">
                         <h5> About Company</h5>
-                        <p>Lorem ipsum dolor sit amet</p>
-                        <p>Lorem ipsum dolor sit amet</p>
-                        <p>Lorem ipsum dolor sit amet</p>
-                        <p>Lorem ipsum dolor sit amet</p>
+                        <p>We are a leading dry cleaning <br/>company with over 20 years of <br/>experience in the industry.</p>
+                        
                     </div>
                     <div className="col-md-3">
                         <h5>Office</h5>

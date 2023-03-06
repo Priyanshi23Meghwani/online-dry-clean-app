@@ -1,11 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllServices } from "../../store/Actions/ServiceActions";
-
 import './getAllServices.css';
-// import lev from '../../assets/lev.jpg';
-// import jhh from '../../assets/jhh.jpg';
-// import kii from'../../assets/kii.jpg';
 import image from '../../assets/pickup.jpeg';
 import drop from '../../assets/dropoff.jpg';
 import both from '../../assets/Both.jpg';

@@ -10,6 +10,7 @@ function FetchOrderById() {
     const dispatch = useDispatch();
     const { orderId } = useParams();
 
+    // getting order details from api call
     useEffect(() => {
         dispatch(fetchOrderById(orderId));
     }, [orderId])

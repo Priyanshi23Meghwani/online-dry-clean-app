@@ -1,6 +1,7 @@
 import React from 'react';
 import './AboutUs.css';
 
+// simple component to show about us text
 function AboutUs() {
   return (
     <div className="about-us" id = "about">

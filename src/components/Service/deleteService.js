@@ -10,11 +10,13 @@ function DeleteService() {
   const [serviceId, setServiceId] = useState("");
   const dispatch = useDispatch();
 
+    // on submitting the form
   const handleSubmit = () => {
     const reqPayload = {};
     dispatch(deleteService(serviceId, reqPayload));
   };
 
+    // form validations 
   const validateForm = () => {
     return (
       serviceId > 0
@@ -22,6 +24,7 @@ function DeleteService() {
   };
 
   return (
+    // component to be rendered if role is admin
     <div>
     {items.role === "admin"?
     <div className="delete-service-container">

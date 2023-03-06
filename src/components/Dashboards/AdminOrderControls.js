@@ -5,11 +5,12 @@ import Forbidden from "./Forbidden";
 
 function AdminOrderControls() {
 
+    // fetching localstorage user object to verify user role
     const items = JSON.parse(localStorage.getItem('myuser'));
     const navigate = useNavigate();
     
-
     return (
+        // if the role is admin this component will be rendered otherwise forbidden page will be shown
         <div>
         {items.role === "admin"?
         <div className="order-controls-container" >

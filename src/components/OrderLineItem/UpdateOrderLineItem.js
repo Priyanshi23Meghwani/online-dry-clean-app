@@ -16,11 +16,11 @@ function UpdateOrderLineItem() {
     const dispatch = useDispatch();
     const order = useSelector(state => state.OrderReducer.order);
 
-
     useEffect(() => {
         dispatch(fetchOrderById(itemId));
     }, [dispatch, itemId]);
 
+    // pre populate the form
     useEffect(() => {
         if (order) {
             setId(order.orderLineItem.id);
@@ -31,6 +31,7 @@ function UpdateOrderLineItem() {
         }
     }, [order]);
 
+    // on submitt9ing form
     const update = () => {
         const payload = {
             id: order.orderLineItem.id,
@@ -42,6 +43,7 @@ function UpdateOrderLineItem() {
         dispatch(updateOrderLineItem(payload));
     }
 
+    // form validation
     const validateForm = () => {
         return (
             id !== "" &&

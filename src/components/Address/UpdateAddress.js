@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import {fetchAddress,updateAddress} from '../../store/Actions/AddressAction';
 
+// dropdown values for states
 const states = [
     "Andhra Pradesh",
     "Arunachal Pradesh",
@@ -34,6 +35,7 @@ const states = [
     "Uttar Pradesh",
     "West Bengal"
 ];
+
 function UpdateAddress() {
 
     const [id, setId] = useState("");
@@ -43,6 +45,7 @@ function UpdateAddress() {
     const [city, setCity] = useState('');
     const [state, setState] = useState('');
     const [pincode, setPincode] = useState('');
+
     const { addressId } = useParams();
     const dispatch = useDispatch();
     const address = useSelector(state => state.AddressReducer.address);
@@ -52,6 +55,7 @@ function UpdateAddress() {
         dispatch(fetchAddress(addressId));
     }, [dispatch, addressId]);
 
+    // to pre populate the form
     useEffect(() => {
         if (address) {
             setId(address.id)
@@ -64,6 +68,7 @@ function UpdateAddress() {
         }
     }, [address]);
 
+    // send payload on submitting the form
     const handleButton = () => {
         const payload = {
             "id": id,

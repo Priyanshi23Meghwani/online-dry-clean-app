@@ -1,5 +1,6 @@
 import './Testimonials.css';
 
+// testimonials list
 const testimonials = [{
     name: 'Monica Geller',
     desc: "FabCare has been my go-to dry cleaner for years. The quality of their work is always consistent, and their pickup and delivery service makes my life so much easier. I highly recommend them to everyone."
@@ -13,6 +14,7 @@ const testimonials = [{
     desc: "I was blown away by the quality of service I received from CleanClothes. Their attention to detail and commitment to customer satisfaction really sets them apart. I wouldn't trust anyone else with my dry cleaning needs."
 }]
 
+// testimonial card
 const TestimonialCard = ({ testimonial }) => {
     return (
         <div className="testimonial-card">
@@ -22,6 +24,8 @@ const TestimonialCard = ({ testimonial }) => {
     );
 };
 
+
+// component to loop over testimonial list and print cards
 const TestimonialsList = () => {
     return (
         <div className="container">

@@ -25,6 +25,7 @@ function Header() {
             <div className="header-logo">
                 <img className="header-logo-img" src={Logo} />
             </div>
+            {/* header navbar based on user role */}
             <nav className="header-nav">
                 <ul className="header-nav-ul">
                     <li className="header-nav-ul-li"> <a href="/">HOME</a> </li>
