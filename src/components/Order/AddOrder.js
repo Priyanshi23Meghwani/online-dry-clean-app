@@ -5,8 +5,18 @@ import "./AddOrder.css";
 
 function AddOrder() {
 
+    // Setting orderDate as today's date
+    const date = new Date();
+    const year = date.getFullYear();
+    const month = (date.getMonth() + 1).toString().padStart(2, "0"); // Month is zero-indexed
+    const day = date.getDate().toString().padStart(2, "0");
+    const dateToday = `${year}-${month}-${day}`;
 
-    const [orderDate, setOrderDate] = useState("2023-12-24");
+    // Setting minimum deleivery date as 2 days after the orderDate
+    // const minDeliveryDate = `${year}-${month}-${parseInt(day)+2}`;
+    // console.log(minDeliveryDate);
+
+    const [orderDate, setOrderDate] = useState(dateToday);
     const [deliveryDate, setDeliveryDate] = useState("");
     const [service, setService] = useState("1");
     const [itemType, setItemType] = useState("");
@@ -14,17 +24,9 @@ function AddOrder() {
     const [material, setMaterial] = useState("");
     const [instructions, setInstructions] = useState("");
 
-    // const date = new Date();
-
-    // const year = date.getFullYear();
-    // const month = (date.getMonth() + 1).toString().padStart(2, "0"); // Month is zero-indexed
-    // const day = date.getDate().toString().padStart(2, "0");
-
-    // const outputDateString = `${year}-${month}-${day}`;
-    console.log(orderDate);
-
     const dispatch = useDispatch();
 
+    // payload for the addOrder post request
     const placeOrder = () => {
         const payload = {
             orderDate: orderDate,
@@ -48,6 +50,7 @@ function AddOrder() {
         dispatch(addOrder(payload))
     }
 
+    // form validations to check for empty values and quantity value
     const validateForm = () => {
         return (
             service &&
@@ -63,18 +66,16 @@ function AddOrder() {
 
     return (
         <div className="add-order-container-outer">
+
             <div className="add-order-container">
                 <h2 style={{textAlign:'center'}}>Place An Order</h2>
-                <div className="add-order-container-field">
-                    <label className="add-order-form-label" >Order Date</label><br />
-                    <input type="date" name="OrderDate" value={orderDate}
-                        onChange={event => setOrderDate(event.target.value)} />
-                </div>
+
                 <div className="add-order-container-field">
                     <label className="add-order-form-label">Delivery Date</label><br />
-                    <input type="date" min="2023-03-08" name="DeliveryDate" value={deliveryDate}
+                    <input type="date" name="DeliveryDate" value={deliveryDate}
                         onChange={event => setDeliveryDate(event.target.value)} />
                 </div>
+
                 <div className="add-order-container-field">
                     <label className="add-order-form-label">Service</label><br />
                     <select value={service} onChange={event => setService(event.target.value)}>
@@ -83,26 +84,31 @@ function AddOrder() {
                         <option value="3">Both</option>
                     </select>
                 </div>
+
                 <div className="add-order-container-field">
                     <label className="add-order-form-label">Item Type</label><br />
                     <input type="text" name="ItemType" value={itemType}
                         onChange={event => setItemType(event.target.value)} />
                 </div>
+
                 <div className="add-order-container-field">
                     <label className="add-order-form-label">Quantity</label><br />
                     <input type="number" min={1} name="Quantity" value={quantity}
                         onChange={event => setQuantity(event.target.value)} />
                 </div>
+
                 <div className="add-order-container-field">
                     <label className="add-order-form-label">Material</label><br />
                     <input type="text" name="Material" value={material}
                         onChange={event => setMaterial(event.target.value)} />
                 </div>
+
                 <div className="add-order-container-field">
                     <label className="add-order-form-label">Instructions</label><br />
                     <input type="text" name="Instructions" value={instructions}
                         onChange={event => setInstructions(event.target.value)} />
                 </div>
+
                 <button className="add-order-form-button" onClick={placeOrder} disabled={!validateForm()}>Place Order</button>
 
             </div>

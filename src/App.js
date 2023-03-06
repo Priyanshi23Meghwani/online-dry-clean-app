@@ -34,10 +34,10 @@ function App() {
           <Route path="/login" element={[<Header/>,<Login/>,<Footer/>]}/>
 
           <Route path="/users" element={<FetchAllUsers/>} />
-          <Route path="/user/:userId" element={<FetchUserById/>} />
+          <Route path="/user/:userId" element={[<Header/>,<FetchUserById/>]} />
           <Route path="/addUser" element={[<Header/>,<AddUser/>,<Footer/>]} />
           <Route path="/user/update/:userId" element={[<Header/>,<UpdateUser/>,<Footer/>]} />
-          
+
           <Route path='/orders/all' element={[<Header/>,<FetchAllOrders/>,<Footer/>]} />
           <Route path='/orders/details/:orderId' element={<FetchOrderById/>} />
           <Route path='/user/orders/:userId' element={[<Header/>,<FetchOrderByUserId/>,<Footer/>]} />

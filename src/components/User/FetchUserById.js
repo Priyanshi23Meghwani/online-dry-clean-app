@@ -22,7 +22,7 @@ function FetchUserById() {
                         </div>
                         <div className='col-md-8'>
                             <div className="text">
-                                <p> {user.name}</p>
+                                <p style={{fontSize:'20px'}}> <strong>{user.name}</strong></p>
                                 <p>{user.email}</p>
                                 <hr />
                             </div>
