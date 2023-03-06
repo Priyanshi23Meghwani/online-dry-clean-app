@@ -16,7 +16,7 @@ function FetchAllOrders() {
     return (
         // <div>Hello</div>
         <div>
-            <h1>All Orders</h1>
+            <h1 style={{textAlign:'center', margin:'200px 0 40px 0'}}>All Orders</h1>
             <table className='table  table-hover'>
                 <thead>
                     <tr>

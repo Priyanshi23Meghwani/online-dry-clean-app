@@ -49,7 +49,7 @@ function UpdateUser() {
     };
 
     return (
-        <div style={{ maxWidth: "500px", margin: "0 auto" }}>
+        <div style={{ maxWidth: "500px", margin: "150px auto" }}>
             <h1 style={{ textAlign: "center" }}>Update User</h1>
             <form>
                 <div className="form-group">

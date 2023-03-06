@@ -63,7 +63,7 @@ function UpdateOrderLineItem() {
                 </div>
                 <div>
                     <label>OrderLineItem Quantity</label>
-                    <input type="number" name="Quantity" value={quantity}
+                    <input type="number" min={1} name="Quantity" value={quantity}
                         onChange={event => setQuantity(event.target.value)} />
                 </div>
                 <div>

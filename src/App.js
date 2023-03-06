@@ -31,15 +31,14 @@ function App() {
           <Route path="/" element={<HomePage/>}/>
           <Route path="/customer" element={<HomePage/>}/>
           <Route path="/admin" element={<HomePage/>}/>
-
           <Route path="/login" element={[<Header/>,<Login/>,<Footer/>]}/>
 
           <Route path="/users" element={<FetchAllUsers/>} />
           <Route path="/user/:userId" element={<FetchUserById/>} />
           <Route path="/addUser" element={[<Header/>,<AddUser/>,<Footer/>]} />
-          <Route path="/user/update/:userId" element={<UpdateUser/>} />
-
-          <Route path='/orders/all' element={<FetchAllOrders/>} />
+          <Route path="/user/update/:userId" element={[<Header/>,<UpdateUser/>,<Footer/>]} />
+          
+          <Route path='/orders/all' element={[<Header/>,<FetchAllOrders/>,<Footer/>]} />
           <Route path='/orders/details/:orderId' element={<FetchOrderById/>} />
           <Route path='/user/orders/:userId' element={[<Header/>,<FetchOrderByUserId/>,<Footer/>]} />
           <Route path='/orders/status/' element={[<Header/>,<ViewOrderByStatus/>,<Footer/>]} />
@@ -48,16 +47,16 @@ function App() {
           <Route path='/orders/add' element={[<Header/>,<AddOrder/>,<Footer/>]} />
           <Route path='/order/details/update/:itemId' element={[<Header/>,<UpdateOrderLineItem/>,<Footer/>]} />
           <Route path="/order/status/:orderId" element={[<Header/>,<ChangeOrderStatus/>,<Footer/>]} />
+          <Route path='/admin/orders' element={[<Header/>,<AdminOrderControls />,<Footer/>]} />
 
-          <Route path='/updateAddress/:addressId' element={<UpdateAddress/>}/>
+          <Route path='/updateAddress/:addressId' element={[<Header/>,<UpdateAddress/>,<Footer/>]}/>
 
           <Route path='/services/getall' element={<GetAllServices />} />
           <Route path='/service/add' element={[<Header/>,<AddService />,<Footer/>]} />
           <Route path='/service/delete' element={[<Header/>,<DeleteService />,<Footer/>]} />
+
           <Route path='/footer' element={<Footer />} />
 
-          <Route path='/admin/orders' element={[<Header/>,<AdminOrderControls />]} />
-          
         </Routes>
       </BrowserRouter>
     </div>

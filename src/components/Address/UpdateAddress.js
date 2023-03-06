@@ -79,8 +79,8 @@ function UpdateAddress() {
     }
 
     return (
-        <div style={{ maxWidth: "500px", margin: "0 auto" }}>
-             <h1 style={{ textAlign: "center" }}>Update Address Details</h1>
+        <div style={{ maxWidth: "500px", margin: "150px auto" }}>
+             <h1 style={{ textAlign: "center", marginBottom:'40px' }}>Update Address Details</h1>
             <div className="form-group">
                 <label>Id:</label>
                 <input type="text" className="form-control" name='id' value={id} disabled />
