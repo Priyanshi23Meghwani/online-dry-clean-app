@@ -43,11 +43,11 @@ function UpdateAddress() {
     const [city, setCity] = useState('');
     const [state, setState] = useState('');
     const [pincode, setPincode] = useState('');
-
     const { addressId } = useParams();
     const dispatch = useDispatch();
     const address = useSelector(state => state.AddressReducer.address);
 
+    // to fetch address by id
     useEffect(() => {
         dispatch(fetchAddress(addressId));
     }, [dispatch, addressId]);

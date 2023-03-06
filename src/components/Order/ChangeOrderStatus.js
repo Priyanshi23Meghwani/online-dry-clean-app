@@ -5,28 +5,31 @@ import { fetchOrderById } from "../../store/Actions/OrderAction";
 import { updateOrderStatus } from "../../store/Actions/OrderAction";
 import "./ChangeOrderStatus.css";
 
-
+// Order status values
 const allStatus = [
     "Pending",
     "Picked up",
     "In Processing",
     "Ready for Dispatch",
     "Dispatched",
-    "Delivered"
+    "Delivered",
+    "Cancelled"
 ]
+
 function ChangeOrderStatus() {
 
     const [id, setId] = useState("");
     const [orderStatus, setOrderStatus] = useState("");
-
     const { orderId } = useParams();
     const dispatch = useDispatch();
     const order = useSelector(state => state.OrderReducer.order);
 
+    // to fetch order with the selected id
     useEffect(() => {
         dispatch(fetchOrderById(orderId));
     }, [dispatch, orderId]);
 
+    // to change order status after getting order of that id
     useEffect(() => {
         if (order) {
             setId(order.id);
@@ -34,6 +37,7 @@ function ChangeOrderStatus() {
         }
     }, [order]);
 
+    // called on submitting the update form 
     const update = () => {
         const payload = {
             id: orderId,

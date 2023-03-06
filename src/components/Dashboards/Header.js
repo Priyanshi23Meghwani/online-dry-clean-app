@@ -45,7 +45,7 @@ function Header() {
 
             {items && items.role == "admin" ?
                 <div className="header-buttons">
-                    <button className="header-buttons-btn" onClick={() => navigate("/admin/orders")}>ORDERS</button>
+                    <button className="header-buttons-btn" onClick={() => navigate("/admin/orders")}>DETAILS</button>
                     <button className="header-buttons-btn" onClick={handleLogout}>LOGOUT</button>
                 </div> : ""}
 

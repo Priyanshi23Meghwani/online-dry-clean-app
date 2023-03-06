@@ -16,7 +16,6 @@ import ChangeOrderStatus from './components/Order/ChangeOrderStatus';
 import AddService from './components/Service/addService';
 import DeleteService from './components/Service/deleteService';
 import Footer from './components/Home/Footer';
-
 import HomePage from './components/Dashboards/HomePage';
 import AdminOrderControls from './components/Dashboards/AdminOrderControls';
 import Header from './components/Dashboards/Header';
@@ -33,7 +32,7 @@ function App() {
           <Route path="/admin" element={<HomePage/>}/>
           <Route path="/login" element={[<Header/>,<Login/>,<Footer/>]}/>
 
-          <Route path="/users" element={<FetchAllUsers/>} />
+          <Route path="/users" element={[<Header/>,<FetchAllUsers/>,<Footer/>]} />
           <Route path="/user/:userId" element={[<Header/>,<FetchUserById/>]} />
           <Route path="/addUser" element={[<Header/>,<AddUser/>,<Footer/>]} />
           <Route path="/user/update/:userId" element={[<Header/>,<UpdateUser/>,<Footer/>]} />

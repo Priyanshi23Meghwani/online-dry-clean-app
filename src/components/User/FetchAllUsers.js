@@ -14,8 +14,8 @@ function FetchAllUsers() {
 
 
     return (
-        <div>
-            <h1>All Users</h1>
+        <div style={{margin:'150px 0'}}>
+            <h1 style={{textAlign:'center',marginBottom:'40px'}}>All Users</h1>
             <table className='table  table-hover'>
                 <thead>
                     <tr>

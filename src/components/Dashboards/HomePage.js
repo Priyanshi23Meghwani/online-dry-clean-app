@@ -13,13 +13,13 @@ import TestimonialsList from "./Testimonials";
 function HomePage() {
 
     const items = JSON.parse(localStorage.getItem('myuser'));
-
     return (
         <div>
             <Header />
             <HeroSection />
             <AboutUs />
             <GetAllServices />
+            {/* display service controls if logged in user is admin */}
             {items && items.role == "admin" ? <AdminServiceControls /> : ""}
             <TestimonialsList />
             <Footer />
