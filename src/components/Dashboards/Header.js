@@ -28,7 +28,7 @@ function Header() {
             </div>
             <nav className="header-nav">
                 <ul className="header-nav-ul">
-                    <li className="header-nav-ul-li"> <a href="#">HOME</a> </li>
+                    <li className="header-nav-ul-li"> <a href="/">HOME</a> </li>
                     <Link to ="about" smooth={true} duration ={500}>
                     <li className="header-nav-ul-li"> <a href="#">ABOUT</a> </li>
                     </Link>
