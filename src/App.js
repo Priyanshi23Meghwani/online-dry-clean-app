@@ -39,11 +39,11 @@ function App() {
           <Route path="/user/update/:userId" element={[<Header/>,<UpdateUser/>,<Footer/>]} />
 
           <Route path='/orders/all' element={[<Header/>,<FetchAllOrders/>,<Footer/>]} />
-          <Route path='/orders/details/:orderId' element={<FetchOrderById/>} />
+          <Route path='/orders/details/:orderId' element={[<Header/>,<FetchOrderById/>,<Footer/>]} />
           <Route path='/user/orders/:userId' element={[<Header/>,<FetchOrderByUserId/>,<Footer/>]} />
           <Route path='/orders/status/' element={[<Header/>,<ViewOrderByStatus/>,<Footer/>]} />
 
-          <Route path='/orders/cancel' element={<CancelOrder/>} />
+          {/* <Route path='/orders/cancel' element={<CancelOrder/>} /> */}
           <Route path='/orders/add' element={[<Header/>,<AddOrder/>,<Footer/>]} />
           <Route path='/order/details/update/:itemId' element={[<Header/>,<UpdateOrderLineItem/>,<Footer/>]} />
           <Route path="/order/status/:orderId" element={[<Header/>,<ChangeOrderStatus/>,<Footer/>]} />
