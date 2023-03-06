@@ -47,6 +47,7 @@ function AddService() {
           <input
             className="add-service-input-charge"
             type="number"
+            min={1}
             name="Charges"
             value={charges}
             onChange={event => setCharges(event.target.value)}
