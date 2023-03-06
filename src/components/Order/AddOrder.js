@@ -12,9 +12,9 @@ function AddOrder() {
     const day = date.getDate().toString().padStart(2, "0");
     const dateToday = `${year}-${month}-${day}`;
 
-    // Setting minimum deleivery date as 2 days after the orderDate
-    // const minDeliveryDate = `${year}-${month}-${parseInt(day)+2}`;
-    // console.log(minDeliveryDate);
+    // Month is zero-indexed
+    const dayDeliver = (date.getDate() + 2).toString().padStart(2, "0");
+    const minDeliveryDate = `${year}-${month}-${dayDeliver}`;
 
     const [orderDate, setOrderDate] = useState(dateToday);
     const [deliveryDate, setDeliveryDate] = useState("");
@@ -68,11 +68,11 @@ function AddOrder() {
         <div className="add-order-container-outer">
 
             <div className="add-order-container">
-                <h2 style={{textAlign:'center'}}>Place An Order</h2>
+                <h2 style={{ textAlign: 'center' }}>Place An Order</h2>
 
                 <div className="add-order-container-field">
                     <label className="add-order-form-label">Delivery Date</label><br />
-                    <input type="date" name="DeliveryDate" value={deliveryDate}
+                    <input type="date" min={minDeliveryDate} name="DeliveryDate" value={deliveryDate}
                         onChange={event => setDeliveryDate(event.target.value)} />
                 </div>
 
