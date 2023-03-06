@@ -39,7 +39,7 @@ function GetAllServices() {
 
 
     return (
-        <div className="container">
+        <div className="container" id = "services">
             <h3 style={{ textAlign: 'center', margin: '10px' , fontSize: '48px', fontWeight: 'bold'}}> Our Services</h3>
             <div className="card-columns ">
                 {

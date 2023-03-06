@@ -4,6 +4,8 @@ import Logo from "../../assets/FabCare.png";
 import { useNavigate } from "react-router-dom";
 import { logoutUser } from '../../store/Actions/LoginAction';
 import { useSelector, useDispatch } from 'react-redux';
+import {Link} from 'react-scroll';
+
 
 
 function Header() {
@@ -27,9 +29,12 @@ function Header() {
             <nav className="header-nav">
                 <ul className="header-nav-ul">
                     <li className="header-nav-ul-li"> <a href="#">HOME</a> </li>
+                    <Link to ="about" smooth={true} duration ={500}>
                     <li className="header-nav-ul-li"> <a href="#">ABOUT</a> </li>
+                    </Link>
+                    <Link to = "services" smooth={true} duration ={500}>
                     <li className="header-nav-ul-li"> <a href="#">SERVICES</a> </li>
-
+                    </Link>
                     {items && items.role == "customer" ?
                         <li className="header-nav-ul-li"> <a href={`/user/${items.userId}`}>MY PROFILE</a> </li> : ""}
 
