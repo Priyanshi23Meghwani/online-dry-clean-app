@@ -6,9 +6,12 @@ function HeroSection() {
   return (
     <div className="hero-section">
       <div className="hero-section-content">
-      {items ? <h3>Hello, <strong>{items.name}!</strong> </h3>:""}
+        
+        {/* display name of logged in user*/}
+        {items ? <h3>Hello, <strong>{items.name}!</strong> </h3> : ""}
         <h1 className="hero-section-heading">Welcome to Fab Care</h1>
         <h2 className="hero-section-subheading">We care for the clothes you wear.</h2>
+
       </div>
     </div>
   );

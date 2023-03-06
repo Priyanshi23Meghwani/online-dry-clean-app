@@ -2,9 +2,12 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
 import { fetchAllUsers } from "../../store/Actions/UserActions";
+import Forbidden from "../Dashboards/Forbidden";
 
 
 function FetchAllUsers() {
+
+    const items = JSON.parse(localStorage.getItem('myuser'));
     const users = useSelector(state => state.UserReducer.users);
     const dispatch = useDispatch();
 
@@ -14,6 +17,8 @@ function FetchAllUsers() {
 
 
     return (
+        <div>
+        {items.role === "admin"?
         <div style={{margin:'150px 0'}}>
             <h1 style={{textAlign:'center',marginBottom:'40px'}}>All Users</h1>
             <table className='table  table-hover'>
@@ -40,7 +45,7 @@ function FetchAllUsers() {
                     ))}
                 </tbody>
             </table>
-        </div>
+        </div> : <Forbidden/>}</div>
 )
     
 }

@@ -57,6 +57,7 @@ select {
     background: linear-gradient(rgba(69, 200, 236, 1), #18aaf0);
     padding: 0 50px;
 }
+
 .add-order-form-button:hover:enabled {
     align-self: center;
     font-size: 15px;

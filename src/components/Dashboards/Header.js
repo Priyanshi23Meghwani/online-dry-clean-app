@@ -8,12 +8,14 @@ import {Link} from 'react-scroll';
 
 
 
+
 function Header() {
     // const user = useSelector((state) => state.LoginReducer.user);
     const navigate = useNavigate();
     const items = JSON.parse(localStorage.getItem('myuser'));
     const dispatch = useDispatch();
 
+    // called on logout to clear local storage
     const handleLogout = () => {
         console.log("inside handleLogout");
         dispatch(logoutUser());
@@ -42,18 +44,21 @@ function Header() {
                         <li className="header-nav-ul-li"> <a href={`/user/orders/${items.userId}`}>MY ORDERS</a> </li> : ""}
                 </ul>
             </nav>
+            {/* visible if no user is logged in */}
             {!items ?
                 <div className="header-buttons">
                     <button className="header-buttons-btn" onClick={() => navigate("/login")}>LOGIN</button>
                     <button className="header-buttons-btn" onClick={() => navigate("/addUser")}>SIGN UP</button>
                 </div> : ""}
 
+            {/* visible if logged in user is admin */}
             {items && items.role == "admin" ?
                 <div className="header-buttons">
                     <button className="header-buttons-btn" onClick={() => navigate("/admin/orders")}>DETAILS</button>
                     <button className="header-buttons-btn" onClick={handleLogout}>LOGOUT</button>
                 </div> : ""}
-
+                
+            {/* visible if logged in user is customer*/}
             {items && items.role == "customer" ?
                 <div className="header-buttons">
                     <button className="header-buttons-btn" onClick={() => navigate("/orders/add")}>PLACE ORDER</button>

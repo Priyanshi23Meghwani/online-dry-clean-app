@@ -5,7 +5,6 @@ import AddUser from './components/User/AddUser';
 import FetchAllOrders from './components/Order/FetchAllOrders';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import FetchOrderById from './components/Order/FetchOrderById';
-import CancelOrder from './components/Order/CancelOrder';
 import UpdateUser from './components/User/UpdateUser';
 import GetAllServices from './components/Service/getAllServices';
 import AddOrder from './components/Order/AddOrder';
@@ -42,7 +41,6 @@ function App() {
           <Route path='/user/orders/:userId' element={[<Header/>,<FetchOrderByUserId/>,<Footer/>]} />
           <Route path='/orders/status/' element={[<Header/>,<ViewOrderByStatus/>,<Footer/>]} />
 
-          {/* <Route path='/orders/cancel' element={<CancelOrder/>} /> */}
           <Route path='/orders/add' element={[<Header/>,<AddOrder/>,<Footer/>]} />
           <Route path='/order/details/update/:itemId' element={[<Header/>,<UpdateOrderLineItem/>,<Footer/>]} />
           <Route path="/order/status/:orderId" element={[<Header/>,<ChangeOrderStatus/>,<Footer/>]} />
@@ -54,7 +52,6 @@ function App() {
           <Route path='/service/add' element={[<Header/>,<AddService />,<Footer/>]} />
           <Route path='/service/delete' element={[<Header/>,<DeleteService />,<Footer/>]} />
 
-          <Route path='/footer' element={<Footer />} />
 
         </Routes>
       </BrowserRouter>

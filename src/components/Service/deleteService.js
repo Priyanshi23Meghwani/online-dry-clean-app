@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { deleteService } from "../../store/Actions/ServiceActions";
 import "./deleteService.css";
+import Forbidden from "../Dashboards/Forbidden";
 
 function DeleteService() {
+
+  const items = JSON.parse(localStorage.getItem('myuser'));
   const [serviceId, setServiceId] = useState("");
   const dispatch = useDispatch();
 
@@ -19,6 +22,8 @@ function DeleteService() {
   };
 
   return (
+    <div>
+    {items.role === "admin"?
     <div className="delete-service-container">
       <h2 className="delete-heading">Delete Service</h2>
       <div className="container mt-4">
@@ -42,7 +47,7 @@ function DeleteService() {
         </button> */}
         </form>
       </div>
-    </div>
+    </div>: <Forbidden/> }</div>
   );
 }
 

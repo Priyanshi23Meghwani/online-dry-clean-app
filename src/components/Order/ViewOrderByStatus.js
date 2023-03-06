@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchOrdersByStatus } from "../../store/Actions/OrderAction";
+import Forbidden from "../Dashboards/Forbidden";
 
 const allStatus = [
     "Pending",
@@ -13,6 +14,7 @@ const allStatus = [
 
 function ViewOrderByStatus() {
 
+    const items = JSON.parse(localStorage.getItem('myuser'));
     const [orderStatus, setOrderStatus] = useState("");
     const dispatch = useDispatch();
     const orders = useSelector(state => state.OrderReducer.orders);
@@ -29,6 +31,8 @@ function ViewOrderByStatus() {
     }
 
     return (
+        <div>
+        {items.role === "admin"?
         <div className="container" style={{ marginTop: '150px' }}>
             <h3 style={{ textAlign: 'center', margin: '10px' , fontSize: '48px', fontWeight: 'bold'}}> View Orders By Status</h3>
             <div className="form-group">
@@ -64,7 +68,7 @@ function ViewOrderByStatus() {
              }
             </div>
            
-        </div>
+        </div>: <Forbidden/>}</div>
     );
 
 }

@@ -3,7 +3,7 @@ import { useDispatch,useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { fetchOrderById } from "../../store/Actions/OrderAction";
 import { updateOrderStatus } from "../../store/Actions/OrderAction";
-
+import Forbidden from "../Dashboards/Forbidden";
 
 const allStatus = [
     "Pending",
@@ -11,7 +11,8 @@ const allStatus = [
     "In Processing",
     "Ready for Dispatch",
     "Dispatched",
-    "Delivered"
+    "Delivered",
+    "Cancelled"
 ]
 function ChangeOrderStatus(){
 
@@ -22,7 +23,10 @@ function ChangeOrderStatus(){
     const dispatch = useDispatch();
     const order = useSelector(state => state.OrderReducer.order);
 
+    const items = JSON.parse(localStorage.getItem('myuser'));
+
     useEffect(() => {
+        
         dispatch(fetchOrderById(orderId));
     }, [dispatch, orderId]);
 
@@ -39,10 +43,11 @@ function ChangeOrderStatus(){
             orderStatus: orderStatus,
         }
         dispatch(updateOrderStatus(payload));
-
     }
 
     return(
+        <div>
+        {items.role === "admin"?
         <div>
              <div>
                 <label>Order Id</label>
@@ -60,7 +65,7 @@ function ChangeOrderStatus(){
                 </div>
                 <button onClick={update}>Update</button>
 
-        </div>
+        </div>: <Forbidden/>}</div>
     )
 }
 export default ChangeOrderStatus
