@@ -4,23 +4,7 @@ import { useParams, Link } from 'react-router-dom';
 import { fetchOrdersByUserId, cancelOrder } from '../../store/Actions/OrderAction';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import Backdrop from '@mui/material/Backdrop';
-import Box from '@mui/material/Box';
-import Fade from '@mui/material/Fade';
-import Typography from '@mui/material/Typography';
 import "./FetchOrderByUserId.css";
-
-// const style = {
-//     position: 'absolute',
-//     top: '50%',
-//     left: '50%',
-//     transform: 'translate(-50%, -50%)',
-//     width: 400,
-//     bgcolor: 'white',
-//     border: '2px solid #000',
-//     boxShadow: 24,
-//     p: 4,
-// };
 
 function FetchOrderByUserId() {
     const orders = useSelector(state => state.OrderReducer.orders);

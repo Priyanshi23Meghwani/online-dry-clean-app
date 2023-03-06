@@ -15,6 +15,7 @@ function AddOrder() {
     // Month is zero-indexed
     const dayDeliver = (date.getDate() + 2).toString().padStart(2, "0");
     const minDeliveryDate = `${year}-${month}-${dayDeliver}`;
+    const items = JSON.parse(localStorage.getItem('myuser'));
 
     const [orderDate, setOrderDate] = useState(dateToday);
     const [deliveryDate, setDeliveryDate] = useState("");
@@ -34,7 +35,7 @@ function AddOrder() {
             paymentStatus: "Pending",
             orderStatus: "Pending",
             users: {
-                id: "7"
+                id: items.userId
             },
             service: {
                 id: service

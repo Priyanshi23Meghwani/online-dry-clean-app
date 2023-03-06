@@ -3,11 +3,8 @@ import "./Header.css";
 import Logo from "../../assets/FabCare.png";
 import { useNavigate } from "react-router-dom";
 import { logoutUser } from '../../store/Actions/LoginAction';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import {Link} from 'react-scroll';
-
-
-
 
 function Header() {
     // const user = useSelector((state) => state.LoginReducer.user);
