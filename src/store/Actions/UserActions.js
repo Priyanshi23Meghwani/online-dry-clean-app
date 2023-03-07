@@ -56,14 +56,14 @@ export function fetchUser(userId) {
 export function addUser(user) {
     return async (dispatch) => {
         try {
-            const resp = axios.post("http://localhost:8080/addUser", user);
+            const resp = await axios.post("http://localhost:8080/addUser", user);
             dispatch({
                 type: "user/add",
                 payload: resp.data
             });
             alert("User added");
         } catch(err){
-            alert("Registration Failed"+err);
+            alert("Registration Failed" + err);
         }
     }
 }

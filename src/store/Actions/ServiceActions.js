@@ -24,7 +24,7 @@ export function getAllServices() {
           payload: resp.data,
         });
       } catch (error) {
-        // Handle error
+        alert(error);
       }
     };
   }

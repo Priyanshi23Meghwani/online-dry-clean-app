@@ -41,7 +41,7 @@ function GetAllServices() {
             {
                 services.length > 0 &&
                 services.map(i =>
-                    <div className="card" > 
+                    <div className="card" style={{height:'10rem'}}> 
                         <div className="card-body text-center">
                             <h2>{i.id}</h2>
                             <h5 className="card-title">{i.type}</h5> 

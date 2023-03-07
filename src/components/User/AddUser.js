@@ -60,17 +60,18 @@ function AddUser() {
     
     const addUserHandler = () => {
         const payload = {
-            name,
-            email,
-            password,
+            name:name,
+            email:email,
+            password:password,
             contactNo: contactNumber,
+            role:"customer",
             address: {
-                doorNo,
-                street,
-                area,
-                city,
-                state,
-                pincode,
+                doorNo:doorNo,
+                street:street,
+                area:area,
+                city:city,
+                state:state,
+                pincode:pincode,
             },
         };
         dispatch(addUser(payload));
