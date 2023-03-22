@@ -2,44 +2,55 @@
 # HomePage
 ![HomePage](https://github.com/Priyanshi23Meghwani/online-dry-clean-app/blob/master/src/assets/HomePage.png "a title")
 
+
 # Login Page
 ![Login Page](https://github.com/Priyanshi23Meghwani/online-dry-clean-app/blob/master/src/assets/Login.png "a title")
+
 
 # SignUp Page
 ![Sign up Page](https://github.com/Priyanshi23Meghwani/online-dry-clean-app/blob/master/src/assets/SignUp.png "a title")
 
+
 #  Customer Dashboard
 ![Customer Dashboard](https://github.com/Priyanshi23Meghwani/online-dry-clean-app/blob/master/src/assets/UserDashboard.png "a title")
+
 
 # My Orders Page
 ![My Orders](https://github.com/Priyanshi23Meghwani/online-dry-clean-app/blob/master/src/assets/MyOrders.png "a title")
 
+
 # User Profile Page
 ![User Profile](https://github.com/Priyanshi23Meghwani/online-dry-clean-app/blob/master/src/assets/UserProfile.png "a title")
 
+
 # Place Order Page
-![Place](https://github.com/Priyanshi23Meghwani/online-dry-clean-app/blob/master/src/assets/PlaceOrder.png "a title")
+![Place Order](https://github.com/Priyanshi23Meghwani/online-dry-clean-app/blob/master/src/assets/PlaceOrder.png "a title")
 
-# HomePage
-![HomePage](https://github.com/Priyanshi23Meghwani/online-dry-clean-app/blob/master/src/assets/HomePage.png "a title")
 
-# HomePage
-![HomePage](https://github.com/Priyanshi23Meghwani/online-dry-clean-app/blob/master/src/assets/HomePage.png "a title")
+# Admin Dashboard Page
+![Admin Dashboard Page](https://github.com/Priyanshi23Meghwani/online-dry-clean-app/blob/master/src/assets/AdminDashboard.png "a title")
 
-# HomePage
-![HomePage](https://github.com/Priyanshi23Meghwani/online-dry-clean-app/blob/master/src/assets/HomePage.png "a title")
 
-# HomePage
-![HomePage](https://github.com/Priyanshi23Meghwani/online-dry-clean-app/blob/master/src/assets/HomePage.png "a title")
+# Add Service
+![Add Service](https://github.com/Priyanshi23Meghwani/online-dry-clean-app/blob/master/src/assets/AddService.png "a title")
 
-# HomePage
-![HomePage](https://github.com/Priyanshi23Meghwani/online-dry-clean-app/blob/master/src/assets/HomePage.png "a title")
 
-# HomePage
-![HomePage](https://github.com/Priyanshi23Meghwani/online-dry-clean-app/blob/master/src/assets/HomePage.png "a title")
+# Admin Controls
+![Admin Controls](https://github.com/Priyanshi23Meghwani/online-dry-clean-app/blob/master/src/assets/AdminControls.png "a title")
 
-# HomePage
-![HomePage](https://github.com/Priyanshi23Meghwani/online-dry-clean-app/blob/master/src/assets/HomePage.png "a title")
+
+# View Order By Status
+![View Order By Status](https://github.com/Priyanshi23Meghwani/online-dry-clean-app/blob/master/src/assets/OrderByStatus.png "a title")
+
+
+# All Orders
+![All Orders](https://github.com/Priyanshi23Meghwani/online-dry-clean-app/blob/master/src/assets/AllOrders.png "a title")
+
+
+# All Users
+![All Users](https://github.com/Priyanshi23Meghwani/online-dry-clean-app/blob/master/src/assets/AllUsers.png "a title")
+
+
 
 
 
