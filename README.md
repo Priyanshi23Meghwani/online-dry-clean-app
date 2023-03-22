@@ -1,27 +1,46 @@
 # Screenshots
-## HomePage
+# HomePage
 ![HomePage](https://github.com/Priyanshi23Meghwani/online-dry-clean-app/blob/master/src/assets/HomePage.png "a title")
 
-## Login Page
+# Login Page
 ![Login Page](https://github.com/Priyanshi23Meghwani/online-dry-clean-app/blob/master/src/assets/Login.png "a title")
 
-## SignUp Page
+# SignUp Page
 ![Sign up Page](https://github.com/Priyanshi23Meghwani/online-dry-clean-app/blob/master/src/assets/SignUp.png "a title")
 
-##  Customer Dashboard
+#  Customer Dashboard
 ![Customer Dashboard](https://github.com/Priyanshi23Meghwani/online-dry-clean-app/blob/master/src/assets/UserDashboard.png "a title")
 
-## My Orders Page
+# My Orders Page
 ![My Orders](https://github.com/Priyanshi23Meghwani/online-dry-clean-app/blob/master/src/assets/MyOrders.png "a title")
 
-## User Profile Page
+# User Profile Page
 ![User Profile](https://github.com/Priyanshi23Meghwani/online-dry-clean-app/blob/master/src/assets/UserProfile.png "a title")
 
-## Place Order Page
+# Place Order Page
 ![Place](https://github.com/Priyanshi23Meghwani/online-dry-clean-app/blob/master/src/assets/PlaceOrder.png "a title")
 
-## HomePage
+# HomePage
 ![HomePage](https://github.com/Priyanshi23Meghwani/online-dry-clean-app/blob/master/src/assets/HomePage.png "a title")
+
+# HomePage
+![HomePage](https://github.com/Priyanshi23Meghwani/online-dry-clean-app/blob/master/src/assets/HomePage.png "a title")
+
+# HomePage
+![HomePage](https://github.com/Priyanshi23Meghwani/online-dry-clean-app/blob/master/src/assets/HomePage.png "a title")
+
+# HomePage
+![HomePage](https://github.com/Priyanshi23Meghwani/online-dry-clean-app/blob/master/src/assets/HomePage.png "a title")
+
+# HomePage
+![HomePage](https://github.com/Priyanshi23Meghwani/online-dry-clean-app/blob/master/src/assets/HomePage.png "a title")
+
+# HomePage
+![HomePage](https://github.com/Priyanshi23Meghwani/online-dry-clean-app/blob/master/src/assets/HomePage.png "a title")
+
+# HomePage
+![HomePage](https://github.com/Priyanshi23Meghwani/online-dry-clean-app/blob/master/src/assets/HomePage.png "a title")
+
 
 
 # Getting Started with Create React App
