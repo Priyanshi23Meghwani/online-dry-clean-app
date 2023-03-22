@@ -1,6 +1,6 @@
 # Screenshots
 ## HomePage
-![Alt text](https://drive.google.com/file/d/12tgwBck-g_fMzxFrGQOIMk2l6GF7JiO3/view?usp=share_link "a title")
+![Alt text](https://github.com/Priyanshi23Meghwani/online-dry-clean-app/blob/master/src/assets/HomePage.png "a title")
 
 
 # Getting Started with Create React App
