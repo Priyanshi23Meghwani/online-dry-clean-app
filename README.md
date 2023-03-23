@@ -1,7 +1,4 @@
 # Screenshots
-# HomePage
-![HomePage](https://github.com/Priyanshi23Meghwani/online-dry-clean-app/blob/master/src/assets/HomePage.png "a title")
-
 
 # Login Page
 ![Login Page](https://github.com/Priyanshi23Meghwani/online-dry-clean-app/blob/master/src/assets/Login.png "a title")
